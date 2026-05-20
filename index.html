@@ -202,7 +202,7 @@ function unlockAll(){
   for(let i=0;i<STAGES.length;i++) sv.cleared.push(i);
   sv.unlockedShips=[];
   for(let i=0;i<SHIPS.length;i++) sv.unlockedShips.push(i);
-  sv.credits=Math.max(sv.credits,9999);
+  sv.credits=Math.max(sv.credits,99999999999);
   writeSv();
 }
 
