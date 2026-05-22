@@ -16,11 +16,17 @@ canvas{display:block;position:absolute;top:0;left:0}
 #bbbg{background:#0a0010;border-radius:5px;height:11px;border:1px solid rgba(255,0,255,.3);padding:2px}
 #bbfill{height:100%;border-radius:3px;background:linear-gradient(90deg,#f0f,#f44,#ff0);transition:width .1s;box-shadow:0 0 7px #f0f}
 #wbanner{position:absolute;top:43%;left:50%;transform:translate(-50%,-50%);font-size:20px;pointer-events:none;opacity:0;transition:opacity .5s;z-index:15;text-align:center;white-space:nowrap;letter-spacing:4px}
-#mslui{position:absolute;bottom:38px;right:14px;font-size:10px;z-index:10;pointer-events:none;color:#f80;text-align:right}
+#mslui{position:absolute;bottom:55px;right:14px;font-size:10px;z-index:10;pointer-events:none;color:#f80;text-align:right}
+#ultui{position:absolute;bottom:38px;right:14px;font-size:10px;z-index:10;pointer-events:none;color:#f0f;text-align:right}
 #notif{position:absolute;top:54px;left:50%;transform:translateX(-50%);z-index:15;pointer-events:none;opacity:0;transition:opacity .4s;font-size:12px;letter-spacing:2px;white-space:nowrap;text-align:center}
 #partsui{position:absolute;bottom:38px;left:14px;z-index:10;pointer-events:none;display:flex;gap:3px;align-items:center}
 .pdot{width:11px;height:11px;border-radius:50%;border:1px solid #333;background:#111;transition:all .3s}
 .pdot.on{background:#0ff;border-color:#0ff;box-shadow:0 0 6px #0ff}
+/* ULTIMATE GAUGE */
+#ultbar{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:220px;z-index:10;pointer-events:none}
+#ult-lbl{color:#f0f;font-size:9px;text-align:center;letter-spacing:2px;text-shadow:0 0 8px #f0f}
+#ult-bg{background:#0a0010;border-radius:4px;height:8px;border:1px solid rgba(255,0,255,.3);margin-top:2px}
+#ult-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#a0f,#f0f,#ff0);transition:width .08s;box-shadow:0 0 6px #f0f}
 .scr{position:absolute;top:0;left:0;width:100%;height:100%;z-index:20;display:none;flex-direction:column;align-items:center;justify-content:flex-start;overflow-y:auto;padding:14px 12px 36px;background:radial-gradient(ellipse at 50% 20%,#050c1a,#020810)}
 h1.logo{font-size:26px;letter-spacing:5px;margin-bottom:2px;margin-top:6px;background:linear-gradient(90deg,#0ff,#a0f,#0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 9px rgba(0,255,255,.5))}
 .tl{color:#334;font-size:9px;margin-bottom:12px;letter-spacing:3px}
@@ -34,20 +40,18 @@ h1.logo{font-size:26px;letter-spacing:5px;margin-bottom:2px;margin-top:6px;backg
 .sc2.lk{opacity:.18;cursor:default}
 .sc2.sel{border-color:#ffd700;background:linear-gradient(180deg,#1a1200,#0a0800)}
 .sc2 .sn{color:rgba(0,255,255,.4);margin-bottom:1px;letter-spacing:1px;font-size:8px}
-.sc2 .sm{color:#0ff;margin-bottom:1px}
-.sc2 .sd{color:#445;font-size:8px}
-.sc2 .ss{color:#ffd700;font-size:8px}
+.sc2 .sm{color:#0ff;margin-bottom:1px}.sc2 .sd{color:#445;font-size:8px}.sc2 .ss{color:#ffd700;font-size:8px}
 .tabb{display:flex;gap:4px;margin-bottom:9px;flex-wrap:wrap}
 .tab{padding:5px 14px;border:1px solid rgba(0,255,255,.2);border-radius:5px;cursor:pointer;font-size:10px;color:#0ff;transition:all .2s}
 .tab.on{background:linear-gradient(135deg,#0af,#0ff);color:#000;border-color:#0ff}
 #shlist{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-bottom:7px}
-.shc{border:2px solid rgba(0,255,255,.12);border-radius:9px;padding:9px;cursor:pointer;width:120px;text-align:center;transition:all .2s;position:relative;background:linear-gradient(180deg,#050f1e,#020810)}
+.shc{border:2px solid rgba(0,255,255,.12);border-radius:9px;padding:9px;cursor:pointer;width:130px;text-align:center;transition:all .2s;position:relative;background:linear-gradient(180deg,#050f1e,#020810)}
 .shc:hover{border-color:rgba(0,255,255,.4)}
 .shc.eq{border-color:#ffd700;box-shadow:0 0 9px rgba(255,215,0,.18)}
 .shc.lk{opacity:.28;cursor:default}
 .shc canvas{display:block;margin:0 auto 3px}
-.shc h3{color:#0ff;font-size:9px;margin-bottom:1px}
-.shc p{color:#556;font-size:7.5px;line-height:1.4}
+.shc h3{color:#0ff;font-size:9px;margin-bottom:1px}.shc p{color:#556;font-size:7px;line-height:1.4}
+.shc .ult-tag{color:#f0f;font-size:7px;margin-top:2px;text-shadow:0 0 5px #f0f}
 .eqb{position:absolute;top:4px;right:4px;background:linear-gradient(135deg,#ffd700,#f80);color:#000;font-size:7px;padding:1px 3px;border-radius:3px;font-weight:bold}
 .lkb{position:absolute;top:4px;right:4px;background:#222;color:#555;font-size:7px;padding:1px 3px;border-radius:3px}
 .ugrid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;width:100%}
@@ -56,11 +60,10 @@ h1.logo{font-size:26px;letter-spacing:5px;margin-bottom:2px;margin-top:6px;backg
 .si.mx{opacity:.28;cursor:default}.si.cn{opacity:.42;cursor:default}
 .si h3{color:#0ff;font-size:10px;margin-bottom:1px}.si p{color:#557;font-size:8px;margin-bottom:3px;line-height:1.4}
 .si .lv{color:#0f8;font-size:8px;float:right}.si .cs{color:#ffd700;font-size:9px}
+.si.ult-upg h3{color:#f0f}.si.ult-upg{border-color:rgba(255,0,255,.2)}
 .crd{color:#ffd700;font-size:11px;margin-bottom:7px;text-align:center;text-shadow:0 0 6px #ffd700}
 #pscr{display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:30;background:rgba(2,8,24,.9);flex-direction:column;align-items:center;justify-content:center;backdrop-filter:blur(3px)}
 #cscr{display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:31;background:rgba(0,0,0,.72);flex-direction:column;align-items:center;justify-content:center}
-
-/* ── USERNAME SCREEN ── */
 #s-username{justify-content:center}
 #uname-input{background:#050f1e;border:1px solid rgba(0,255,255,.4);color:#0ff;padding:10px 18px;font-size:16px;font-family:'Courier New',monospace;border-radius:7px;width:260px;text-align:center;letter-spacing:3px;outline:none;margin:10px 0}
 #uname-input:focus{border-color:#0ff;box-shadow:0 0 12px rgba(0,255,255,.2)}
@@ -84,9 +87,16 @@ h1.logo{font-size:26px;letter-spacing:5px;margin-bottom:2px;margin-top:6px;backg
 <div id="uname-display"></div>
 <button id="reset-btn" onclick="doReset()">⟳ RESET</button>
 <div id="bbwrap"><div id="bbl">⚠ BOSS</div><div id="bbbg"><div id="bbfill" style="width:100%"></div></div></div>
-<div id="wbanner"></div><div id="mslui"></div><div id="notif"></div><div id="partsui"></div>
+<div id="wbanner"></div>
+<div id="mslui"></div>
+<div id="ultui"></div>
+<div id="notif"></div>
+<div id="partsui"></div>
+<div id="ultbar">
+  <div id="ult-lbl">▲ ULTIMATE [X]</div>
+  <div id="ult-bg"><div id="ult-fill" style="width:0%"></div></div>
+</div>
 
-<!-- PAUSE -->
 <div id="pscr">
   <div style="font-size:20px;letter-spacing:5px;color:#0ff;text-shadow:0 0 14px #0ff;margin-bottom:4px">PAUSED</div>
   <div style="color:#334;font-size:9px;letter-spacing:2px;margin-bottom:20px">ESC to resume</div>
@@ -106,7 +116,6 @@ h1.logo{font-size:26px;letter-spacing:5px;margin-bottom:2px;margin-top:6px;backg
   </div>
 </div>
 
-<!-- USERNAME -->
 <div id="s-username" class="scr">
   <h1 class="logo">NEON VOID</h1>
   <div class="tl">— DEEP SPACE ASSAULT —</div>
@@ -115,21 +124,19 @@ h1.logo{font-size:26px;letter-spacing:5px;margin-bottom:2px;margin-top:6px;backg
   <button class="mb pri" style="margin-top:8px" onclick="submitUsername()">▶ START</button>
   <div id="uname-err" style="color:#f44;font-size:9px;margin-top:6px;min-height:14px;letter-spacing:1px"></div>
   <div style="color:#112;font-size:8px;margin-top:14px;text-align:center;line-height:2">
-    SPACE:射撃　Z:ミサイル　矢印/WASD:移動　ESC:ポーズ
+    SPACE:射撃　Z:ミサイル　X:必殺技　矢印/WASD:移動　ESC:ポーズ
   </div>
 </div>
 
-<!-- TITLE -->
 <div id="s-title" class="scr" style="justify-content:center">
   <h1 class="logo">NEON VOID</h1>
   <div class="tl">— DEEP SPACE ASSAULT —</div>
   <button class="mb pri" onclick="openStage()">MISSION SELECT</button><br>
   <button class="mb" onclick="openHangar()">格　納　庫</button>
-  <div style="color:#223;font-size:9px;margin-top:11px">SPACE:射撃 Z:ミサイル 矢印/WASD:移動 ESC:ポーズ</div>
+  <div style="color:#223;font-size:9px;margin-top:11px">SPACE:射撃 Z:ミサイル X:必殺技 矢印/WASD:移動 ESC:ポーズ</div>
   <div style="color:#334;font-size:9px;margin-top:2px">木箱→アイテム ⚙×5→新機体 光る敵→連射UP 隊員救助</div>
   <div style="color:#112;font-size:10px;margin-top:6px" id="tit-cr"></div>
 </div>
-<!-- STAGE SELECT -->
 <div id="s-stage" class="scr">
   <h1 class="logo" style="font-size:17px">MISSION SELECT</h1>
   <div class="crd" id="ss-cr"></div>
@@ -139,12 +146,11 @@ h1.logo{font-size:26px;letter-spacing:5px;margin-bottom:2px;margin-top:6px;backg
     <button class="mb" onclick="showScr('s-title')">← BACK</button>
   </div>
 </div>
-<!-- HANGAR -->
 <div id="s-hangar" class="scr">
   <h1 class="logo" style="font-size:17px">格　納　庫</h1>
   <div class="crd" id="hg-cr"></div>
   <div style="color:#0ff;font-size:10px;margin-bottom:6px" id="hg-pt"></div>
-  <div style="width:740px;max-width:96vw">
+  <div style="width:780px;max-width:96vw">
     <div class="tabb">
       <div class="tab on" id="tab-sh" onclick="hTab('ship')">機体選択</div>
       <div class="tab" id="tab-up" onclick="hTab('upg')">強化</div>
@@ -152,16 +158,14 @@ h1.logo{font-size:26px;letter-spacing:5px;margin-bottom:2px;margin-top:6px;backg
     <div id="hp-ship"><div id="shlist"></div></div>
     <div id="hp-upg" style="display:none"><div id="upg-grid" class="ugrid"></div></div>
   </div>
-  <button class="mb" style="margin-top:9px" id="hg-back" onclick="showScr('s-title')">← BACK</button>
+  <button class="mb" style="margin-top:9px" onclick="showScr('s-title')">← BACK</button>
 </div>
-<!-- SHOP -->
 <div id="s-shop" class="scr">
   <h1 class="logo" style="font-size:16px">⚙ UPGRADE SHOP</h1>
   <div class="crd" id="shop-cr"></div>
   <div style="width:620px;max-width:96vw"><div id="shop-grid" class="ugrid"></div></div>
   <button class="mb pri" style="margin-top:9px" onclick="shopNext()">NEXT STAGE ▶</button>
 </div>
-<!-- END -->
 <div id="s-end" class="scr" style="justify-content:center">
   <h1 id="end-ttl" style="font-size:23px;margin-bottom:6px"></h1>
   <p id="end-msg" style="color:#667;font-size:11px;text-align:center;margin-bottom:14px;white-space:pre-line;line-height:1.9"></p>
@@ -178,59 +182,34 @@ addEventListener('resize',resize);
 // ── USERNAME ──
 let currentUsername='';
 const SECRET_CODE='XXX';
-
 function submitUsername(){
-  let inp=document.getElementById('uname-input');
-  let name=inp.value.trim().toUpperCase();
-  let err=document.getElementById('uname-err');
+  let inp=document.getElementById('uname-input'),name=inp.value.trim().toUpperCase(),err=document.getElementById('uname-err');
   if(!name){err.textContent='名前を入力してください';return}
-  err.textContent='';
-  currentUsername=name;
-  window._nvs={...(window._nvs||{})};
-  loadSv();
-  if(name===SECRET_CODE){
-    unlockAll();
-    showNotif('🔓 全ステージ＆全機体解放！','#0ff');
-  }
+  err.textContent='';currentUsername=name;window._nvs={...(window._nvs||{})};loadSv();
+  if(name===SECRET_CODE){unlockAll();showNotif('🔓 全解放！','#0ff')}
   document.getElementById('uname-display').textContent='[ '+name+' ]';
   document.getElementById('reset-btn').style.display='block';
   showScr('s-title');
 }
-
 function unlockAll(){
-  sv.cleared=[];
-  for(let i=0;i<STAGES.length;i++) sv.cleared.push(i);
-  sv.unlockedShips=[];
-  for(let i=0;i<SHIPS.length;i++) sv.unlockedShips.push(i);
-  sv.credits=Math.max(sv.credits,99999999999);
-  writeSv();
+  sv.cleared=[];for(let i=0;i<STAGES.length;i++)sv.cleared.push(i);
+  sv.unlockedShips=[];for(let i=0;i<SHIPS.length;i++)sv.unlockedShips.push(i);
+  sv.credits=Math.max(sv.credits,9999999);writeSv();
 }
-
 function doReset(){
-  if(!confirm('リセットしますか？\nセーブデータが消去されユーザー名入力に戻ります。')) return;
-  window._nvs=null;
-  sv={credits:0,upgrades:{},shipIdx:0,cleared:[],parts:0,unlockedShips:[0,1,2,3]};
-  currentUsername='';
-  gs=null;
-  paused=false;
-  document.getElementById('pscr').style.display='none';
-  document.getElementById('cscr').style.display='none';
-  document.getElementById('uname-input').value='';
-  document.getElementById('uname-err').textContent='';
-  document.getElementById('uname-display').textContent='';
-  showScr('s-username');
+  if(!confirm('リセットしますか？'))return;
+  window._nvs=null;sv={credits:0,upgrades:{},shipIdx:0,cleared:[],parts:0,unlockedShips:[0,1,2,3]};
+  currentUsername='';gs=null;paused=false;
+  document.getElementById('pscr').style.display='none';document.getElementById('cscr').style.display='none';
+  document.getElementById('uname-input').value='';document.getElementById('uname-err').textContent='';
+  document.getElementById('uname-display').textContent='';showScr('s-username');
 }
-
-// Enterキーでsubmit
-document.getElementById('uname-input').addEventListener('keydown',e=>{
-  if(e.key==='Enter') submitUsername();
-});
+document.getElementById('uname-input').addEventListener('keydown',e=>{if(e.key==='Enter')submitUsername()});
 
 // ── PAUSE ──
 let paused=false,gs=null,selStage=0,curStage=0;
 function togglePause(){
-  if(!gs||!gs.alive)return;
-  paused=!paused;
+  if(!gs||!gs.alive)return;paused=!paused;
   document.getElementById('pscr').style.display=paused?'flex':'none';
   let s=document.getElementById('pshop');s.style.opacity=gs.bossWave?'.35':'1';s.style.pointerEvents=gs.bossWave?'none':'auto';
 }
@@ -247,10 +226,8 @@ addEventListener('keydown',e=>{
   if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();
 });
 addEventListener('keyup',e=>keys[e.code]=false);
-
 function rnd(a,b){return a+Math.random()*(b-a)}
 function rndI(a,b){return Math.floor(rnd(a,b+1))}
-
 function drawNeb(){
   bgCtx.fillStyle='#020818';bgCtx.fillRect(0,0,W,H);
   for(let i=0;i<5;i++){let g=bgCtx.createRadialGradient(rnd(0,W),rnd(0,H),0,W/2,H/2,W*.8);g.addColorStop(0,`hsla(${190+i*55},100%,18%,.05)`);g.addColorStop(1,'transparent');bgCtx.fillStyle=g;bgCtx.fillRect(0,0,W,H)}
@@ -262,27 +239,32 @@ function loadSv(){if(window._nvs){let s=window._nvs;sv={...sv,...s,upgrades:{...
 function writeSv(){window._nvs={...sv}}
 loadSv();
 
-// ── UPGRADES ──
+// ── UPGRADES (ダメージ100, 連射200, 必殺技強化追加) ──
 const UDEFS=[
-  {id:'speed',      name:'エンジン強化',  desc:'移動速度+0.4/lv',  bc:20,ml:100},
-  {id:'fireRate',   name:'連射強化',      desc:'射撃間隔-0.15/lv', bc:15,ml:100},
-  {id:'damage',     name:'出力強化',      desc:'弾ダメージ+1/lv',  bc:40,ml:50},
-  {id:'spread',     name:'散開弾',        desc:'扇状+2発/lv',       bc:50,ml:30},
-  {id:'triShot',    name:'3方向ショット', desc:'左右45°同時発射',   bc:70,ml:1},
-  {id:'bulletSize', name:'大口径弾',      desc:'弾サイズ拡大',      bc:55,ml:30},
-  {id:'pierce',     name:'貫通弾',        desc:'弾が貫通+1体/lv',  bc:75,ml:30},
-  {id:'missile',    name:'ミサイル解放',  desc:'Zで追尾MSL',        bc:90,ml:3},
-  {id:'missileRate',name:'MSL連射',       desc:'MSL-CD短縮/lv',    bc:30,ml:80,req:'missile'},
-  {id:'bombDmg',    name:'MSL強化',       desc:'ボスMSLダメ+2/lv', bc:80,ml:30,req:'missile'},
-  {id:'maxHp',      name:'シールド拡張',  desc:'最大HP+1/lv',      bc:65,ml:30},
-  {id:'rescueSpd',  name:'救助速度強化',  desc:'救助時間短縮/lv',  bc:40,ml:50},
-  {id:'bulletSpd',  name:'弾速強化',      desc:'弾速+10%/lv',      bc:35,ml:30},
-  {id:'shield',     name:'緊急修復',      desc:'HPを全回復',        bc:55,ml:99},
+  {id:'speed',      name:'エンジン強化',  desc:'移動速度+0.4/lv',    bc:20, ml:100},
+  {id:'fireRate',   name:'連射強化',      desc:'射撃間隔-0.1/lv',    bc:15, ml:200},
+  {id:'damage',     name:'出力強化',      desc:'弾ダメージ+1/lv',    bc:40, ml:100},
+  {id:'spread',     name:'散開弾',        desc:'扇状+2発/lv',         bc:50, ml:30},
+  {id:'triShot',    name:'3方向ショット', desc:'左右45°同時発射',     bc:70, ml:1},
+  {id:'bulletSize', name:'大口径弾',      desc:'弾サイズ拡大/lv',    bc:55, ml:30},
+  {id:'pierce',     name:'貫通弾',        desc:'弾が貫通+1体/lv',    bc:75, ml:30},
+  {id:'missile',    name:'ミサイル解放',  desc:'Zで追尾MSL',          bc:90, ml:3},
+  {id:'missileRate',name:'MSL連射',       desc:'MSL-CD短縮/lv',      bc:30, ml:80, req:'missile'},
+  {id:'bombDmg',    name:'MSL強化',       desc:'ボスMSLダメ+2/lv',   bc:80, ml:30, req:'missile'},
+  {id:'maxHp',      name:'シールド拡張',  desc:'最大HP+1/lv',        bc:65, ml:30},
+  {id:'rescueSpd',  name:'救助速度強化',  desc:'救助時間短縮/lv',    bc:40, ml:50},
+  {id:'bulletSpd',  name:'弾速強化',      desc:'弾速+10%/lv',        bc:35, ml:30},
+  {id:'shield',     name:'緊急修復',      desc:'HPを全回復',          bc:55, ml:99},
+  // ── 必殺技強化 ──
+  {id:'ultGauge',   name:'▲ ULT充填速度', desc:'ゲージ蓄積+20%/lv',  bc:60, ml:50,  ult:true},
+  {id:'ultDamage',  name:'▲ ULT威力強化', desc:'必殺技ダメ+25%/lv',  bc:80, ml:50,  ult:true},
+  {id:'ultDuration',name:'▲ ULT持続強化', desc:'必殺技時間+20%/lv',  bc:70, ml:40,  ult:true},
+  {id:'ultCooldown',name:'▲ ULTクールダウン',desc:'CD-10%/lv',       bc:50, ml:30,  ult:true},
 ];
 function lv(id){return sv.upgrades[id]||0}
 function CS(){return SHIPS[sv.shipIdx]}
 function gSpd(){return CS().spd+lv('speed')*.4}
-function gFD(b){return Math.max(2,CS().fd-Math.floor(lv('fireRate')*.15)-(b||0))}
+function gFD(b){return Math.max(1,CS().fd-Math.floor(lv('fireRate')*.1)-(b||0))}
 function gDmg(){return CS().sp==='viper'?1:1+lv('damage')}
 function gMslLv(){return lv('missile')}
 function gMslCD(){return Math.max(12,80-lv('missileRate'))}
@@ -292,9 +274,16 @@ function gPierce(){return lv('pierce')}
 function gSpread(){return CS().sb+lv('spread')}
 function gBMslDmg(){return 3+lv('bombDmg')*2}
 function gBulletSpd(){return 1+lv('bulletSpd')*.1}
-function gRescueTime(){let b=CS().sp==='rescue'?60:180;return Math.max(15,b-lv('rescueSpd')*2)}
+function gRescueTime(){return Math.max(15,(CS().sp==='rescue'?60:180)-lv('rescueSpd')*2)}
+// ULT helpers
+function gUltGaugeMult(){return 1+lv('ultGauge')*.2}
+function gUltDmgMult(){return 1+lv('ultDamage')*.25}
+function gUltDurMult(){return 1+lv('ultDuration')*.2}
+function gUltCDMult(){return Math.max(.1,1-lv('ultCooldown')*.1)}
+const ULT_MAX=300;
+function gUltFill(pts){return pts*gUltGaugeMult()}
 
-// ── SHIPS (40 types) ──
+// ── SHIP HELPERS ──
 function mkH(cx,pts,col,glow){
   if(glow){cx.shadowColor=glow;cx.shadowBlur=14}
   cx.fillStyle=col;cx.beginPath();
@@ -304,121 +293,90 @@ function mkH(cx,pts,col,glow){
 function mkE(cx,x,y,n,t){for(let i=0;i<n;i++){let ox=(i-(n-1)/2)*9;cx.fillStyle='rgba(255,100,0,.5)';cx.beginPath();cx.ellipse(x+ox,y,2.5,5+(t?Math.random()*3:2),0,0,Math.PI*2);cx.fill()}}
 function cock(cx,x,y,r,c){cx.fillStyle=c||'rgba(255,255,255,.18)';cx.beginPath();cx.ellipse(x,y,r,r*.55,0,0,Math.PI*2);cx.fill()}
 
+// ── SHIPS ──
+// Each ship has: ult = {name, desc, fn(gs,p)} — called on activation
 const SHIPS=[
-  {id:'falcon',  name:'FALCON',   col:'#0ff',hp:3,spd:4.5,fd:15,sb:0,sp:'',pc:0,
-   desc:'バランス型\nHP●●●  速度●●●\n火力●●●',
+  // ─── BASE SHIPS ───
+  {id:'falcon',name:'FALCON',col:'#0ff',hp:3,spd:4.5,fd:15,sb:0,sp:'',pc:0,
+   desc:'バランス型',ult:{name:'サイバー弾幕',desc:'全方位弾幕を展開'},
    fn(cx,x,y,col,t){mkE(cx,0,15,1,t);mkH(cx,[-14,14,-6,8,0,12,6,8,14,14,0,-18],col,col);cock(cx,0,-4,5)}},
-  {id:'titan',   name:'TITAN',    col:'#f80',hp:5,spd:3.0,fd:11,sb:1,sp:'',pc:0,
-   desc:'重装型\nHP●●●●●  速度●●\n火力●●●●',
+  {id:'titan',name:'TITAN',col:'#f80',hp:5,spd:3.0,fd:11,sb:1,sp:'',pc:0,
+   desc:'重装型・高HP',ult:{name:'アーマーブレイク',desc:'画面全体に衝撃波'},
    fn(cx,x,y,col,t){mkE(cx,0,14,2,t);mkH(cx,[-19,16,-9,8,0,14,9,8,19,16,0,-20],col,col);cx.fillStyle='rgba(255,255,255,.1)';cx.fillRect(-5,-8,10,14)}},
-  {id:'specter', name:'SPECTER',  col:'#c0f',hp:2,spd:7.0,fd:20,sb:0,sp:'',pc:0,
-   desc:'高速型\nHP●●  速度●●●●●\n火力●●',
+  {id:'specter',name:'SPECTER',col:'#c0f',hp:2,spd:7.0,fd:20,sb:0,sp:'',pc:0,
+   desc:'超高速型',ult:{name:'フェイズシフト',desc:'一定時間無敵+高速移動'},
    fn(cx,x,y,col,t){mkE(cx,0,14,1,t);cx.fillStyle=col+'1a';cx.beginPath();cx.ellipse(0,0,14,20,0,0,Math.PI*2);cx.fill();mkH(cx,[-10,14,-4,6,0,10,4,6,10,14,0,-22],col,col)}},
-  {id:'nova',    name:'NOVA',     col:'#0f8',hp:4,spd:4.0,fd:13,sb:0,sp:'',pc:0,
-   desc:'支援型\nHP●●●●  速度●●●\n火力●●●●●',
+  {id:'nova',name:'NOVA',col:'#0f8',hp:4,spd:4.0,fd:13,sb:0,sp:'',pc:0,
+   desc:'支援型・高火力',ult:{name:'ノヴァバースト',desc:'超巨大ビームを発射'},
    fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-16,10,-20,18,0,10,20,18,16,10,0,-20],col,col);cock(cx,0,-2,5)}},
-  {id:'rescue',  name:'RESCUE',   col:'#ff0',hp:3,spd:5.0,fd:16,sb:0,sp:'rescue',pc:5,
-   desc:'救助機\nHP●●●  速度●●●●\n救助範囲2倍',
+  // ─── PARTS UNLOCK ───
+  {id:'rescue',name:'RESCUE',col:'#ff0',hp:3,spd:5.0,fd:16,sb:0,sp:'rescue',pc:5,
+   desc:'救助機',ult:{name:'救助ビーコン',desc:'全隊員を即時救出+回復'},
    fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-12,8,-16,18,0,12,16,18,12,8,0,-20],col,col);cx.fillStyle='#f44';cx.fillRect(-3,-5,6,10);cx.fillRect(-6,-2,12,4)}},
-  {id:'bomber',  name:'BOMBER',   col:'#f44',hp:4,spd:3.2,fd:18,sb:0,sp:'bomber',pc:5,
-   desc:'爆撃機\nHP●●●●  速度●●\n弾が爆発・範囲',
+  {id:'bomber',name:'BOMBER',col:'#f44',hp:4,spd:3.2,fd:18,sb:0,sp:'bomber',pc:5,
+   desc:'爆撃機',ult:{name:'絨毯爆撃',desc:'画面全体にクラスター爆弾'},
    fn(cx,x,y,col,t){mkE(cx,0,12,2,t);mkH(cx,[-18,14,-10,8,0,14,10,8,18,14,0,-18],col,col);cx.fillStyle='rgba(255,255,255,.1)';cx.fillRect(-4,-10,8,16)}},
-  {id:'viper',   name:'VIPER',    col:'#0f4',hp:2,spd:5.5,fd:5, sb:0,sp:'viper', pc:5,
-   desc:'速射機\nHP●●  速度●●●●\n超連射・低ダメ',
+  {id:'viper',name:'VIPER',col:'#0f4',hp:2,spd:5.5,fd:5,sb:0,sp:'viper',pc:5,
+   desc:'超連射型',ult:{name:'バレットストーム',desc:'超密度弾幕を前方に集中'},
    fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-8,14,-3,8,0,12,3,8,8,14,0,-24],col,col);cx.fillStyle='rgba(255,255,255,.18)';cx.fillRect(-2,-14,4,16)}},
-  {id:'colossus',name:'COLOSSUS', col:'#a88',hp:7,spd:2.0,fd:14,sb:2,sp:'',pc:5,
-   desc:'超重装機\nHP●●●●●●●  速度●\n超耐久',
+  {id:'colossus',name:'COLOSSUS',col:'#a88',hp:7,spd:2.0,fd:14,sb:2,sp:'',pc:5,
+   desc:'超重装機',ult:{name:'コロッサスラム',desc:'巨大衝撃波で全敵貫通'},
    fn(cx,x,y,col,t){mkE(cx,0,14,3,t);mkH(cx,[-22,18,-12,10,0,16,12,10,22,18,0,-22],col,col);cx.fillStyle='rgba(255,255,255,.08)';cx.fillRect(-10,-12,20,20)}},
-  {id:'angel',   name:'ANGEL',    col:'#faf',hp:4,spd:5.0,fd:17,sb:0,sp:'heal', pc:5,
-   desc:'回復機\nHP●●●●  速度●●●●\n徐々にHP回復',
+  {id:'angel',name:'ANGEL',col:'#faf',hp:4,spd:5.0,fd:17,sb:0,sp:'heal',pc:5,
+   desc:'回復機',ult:{name:'リジェネフィールド',desc:'HPを全回復+しばらく回復継続'},
    fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-14,12,-18,20,0,12,18,20,14,12,0,-20],col,col);cock(cx,0,-4,5,'rgba(255,200,255,.28)')}},
-  {id:'phantom', name:'PHANTOM',  col:'#8af',hp:2,spd:6.5,fd:18,sb:0,sp:'stealth',pc:5,
-   desc:'ステルス機\nHP●●  速度●●●●●\n被弾率-30%',
+  {id:'phantom',name:'PHANTOM',col:'#8af',hp:2,spd:6.5,fd:18,sb:0,sp:'stealth',pc:5,
+   desc:'ステルス機',ult:{name:'シャドウブレイク',desc:'全弾消去+暗闇状態で高速攻撃'},
    fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-12,14,-8,4,0,10,8,4,12,14,0,-20],col,col);cx.fillStyle=col+'22';cx.beginPath();cx.ellipse(0,0,12,18,0,0,Math.PI*2);cx.fill()}},
-  {id:'dragon',  name:'DRAGON',   col:'#f48',hp:4,spd:4.8,fd:14,sb:0,sp:'burst',pc:5,
-   desc:'龍型\nHP●●●●  速度●●●●\n3連バースト',
+  {id:'dragon',name:'DRAGON',col:'#f48',hp:4,spd:4.8,fd:14,sb:0,sp:'burst',pc:5,
+   desc:'龍型バースト',ult:{name:'ドラゴンブレス',desc:'巨大炎弾を前方に発射'},
    fn(cx,x,y,col,t){mkE(cx,0,14,2,t);mkH(cx,[-16,14,-6,6,0,12,6,6,16,14,0,-20],col,col);mkH(cx,[-20,8,-14,2,-14,14],col+'88',null);mkH(cx,[20,8,14,2,14,14],col+'88',null)}},
-  {id:'hawk',    name:'HAWK',     col:'#4af',hp:3,spd:6.0,fd:14,sb:0,sp:'hawk',  pc:5,
-   desc:'急降下型\nHP●●●  速度●●●●●\n斜め弾追加',
+  {id:'hawk',name:'HAWK',col:'#4af',hp:3,spd:6.0,fd:14,sb:0,sp:'hawk',pc:5,
+   desc:'急降下斜め弾',ult:{name:'タロンストライク',desc:'高速突撃+接触した敵を全消滅'},
    fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-18,12,-4,4,0,12,4,4,18,12,0,-18],col,col);cock(cx,0,-4,4)}},
-  {id:'cyclone', name:'CYCLONE',  col:'#0df',hp:3,spd:4.5,fd:15,sb:0,sp:'cyclone',pc:5,
-   desc:'旋回型\nHP●●●  速度●●●\n弾が渦状に広がる',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-14,14,-6,6,0,12,6,6,14,14,0,-18],col,col);ctx.strokeStyle=col+'55';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(0,0,14,0,Math.PI*2);ctx.stroke()}},
-  {id:'fort_s',  name:'FORTRESS-S',col:'#8f8',hp:6,spd:2.5,fd:16,sb:3,sp:'',   pc:5,
-   desc:'要塞型\nHP●●●●●●  速度●\n全方位スプレッド',
-   fn(cx,x,y,col,t){mkE(cx,0,14,3,t);cx.fillStyle=col;cx.shadowColor=col;cx.shadowBlur=12;cx.fillRect(-18,-16,36,32);cx.shadowBlur=0;cx.fillStyle='rgba(255,255,255,.08)';cx.fillRect(-14,-12,28,24)}},
-  {id:'serpent', name:'SERPENT',  col:'#af4',hp:3,spd:5.0,fd:15,sb:0,sp:'serpent',pc:5,
-   desc:'蛇型\nHP●●●  速度●●●●\nS字弾道',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-10,14,-4,6,0,10,4,6,10,14,0,-22],col,col);mkH(cx,[-14,4,-10,-4,-10,12],col+'88',null);mkH(cx,[14,4,10,-4,10,12],col+'88',null)}},
-  {id:'thunder', name:'THUNDER',  col:'#ff8',hp:3,spd:4.2,fd:16,sb:1,sp:'thunder',pc:5,
-   desc:'雷撃機\nHP●●●  速度●●●\n雷弾・広がり大',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-16,14,-8,4,0,12,8,4,16,14,0,-18],col,col);cx.fillStyle=col+'55';cx.beginPath();cx.moveTo(-8,-8);cx.lineTo(2,-18);cx.lineTo(0,-6);cx.lineTo(10,-16);cx.lineTo(-2,0);cx.closePath();cx.fill()}},
-  {id:'corsair', name:'CORSAIR',  col:'#f84',hp:4,spd:4.3,fd:14,sb:0,sp:'fastb', pc:5,
-   desc:'海賊型\nHP●●●●  速度●●●\n弾速+50%',
-   fn(cx,x,y,col,t){mkE(cx,0,14,2,t);mkH(cx,[-16,14,-8,6,0,12,8,6,16,14,0,-18],col,col);mkH(cx,[-20,10,-14,4,-14,16],col+'99',null)}},
-  {id:'eclipse', name:'ECLIPSE',  col:'#80f',hp:3,spd:4.0,fd:18,sb:0,sp:'eclipse',pc:5,
-   desc:'日食型\nHP●●●  速度●●●\n周囲に弾幕',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);cx.fillStyle=col;cx.shadowColor=col;cx.shadowBlur=12;cx.beginPath();cx.ellipse(0,0,16,14,0,0,Math.PI*2);cx.fill();cx.shadowBlur=0;cx.fillStyle='#030a14';cx.beginPath();cx.ellipse(-4,-2,8,7,0,0,Math.PI*2);cx.fill()}},
-  {id:'valkyrie',name:'VALKYRIE', col:'#aff',hp:4,spd:4.8,fd:14,sb:0,sp:'valkyrie',pc:5,
-   desc:'戦乙女型\nHP●●●●  速度●●●●\nHP多いほど強化',
-   fn(cx,x,y,col,t){mkE(cx,0,14,2,t);mkH(cx,[-14,12,-18,20,0,12,18,20,14,12,0,-20],col,col);cx.fillStyle=col+'44';cx.beginPath();cx.ellipse(0,-6,8,12,0,0,Math.PI*2);cx.fill()}},
-  {id:'wraith',  name:'WRAITH',   col:'#a0f',hp:2,spd:6.8,fd:19,sb:0,sp:'wraith',pc:5,
-   desc:'亡霊型\nHP●●  速度●●●●●\n無敵時間2倍',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-10,14,-6,4,0,10,6,4,10,14,0,-22],col,col);cx.fillStyle=col+'1a';cx.beginPath();cx.ellipse(0,0,16,22,0,0,Math.PI*2);cx.fill()}},
-  {id:'levi_s',  name:'LEVIATHAN-S',col:'#08f',hp:6,spd:3.5,fd:13,sb:4,sp:'',   pc:5,
-   desc:'海神型\nHP●●●●●●  速度●●\n超広散開弾',
-   fn(cx,x,y,col,t){mkE(cx,0,14,3,t);mkH(cx,[-22,16,-12,8,0,14,12,8,22,16,0,-22],col,col);cock(cx,0,-4,6)}},
-  {id:'strix',   name:'STRIX',    col:'#fc8',hp:3,spd:4.2,fd:15,sb:0,sp:'scout', pc:5,
-   desc:'梟型\nHP●●●  速度●●●\n敵をスキャン・誘導弾',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-14,12,-18,18,0,10,18,18,14,12,0,-18],col,col);cx.fillStyle=col+'55';cx.beginPath();cx.ellipse(-8,-4,5,4,-.3,0,Math.PI*2);cx.fill();cx.beginPath();cx.ellipse(8,-4,5,4,.3,0,Math.PI*2);cx.fill()}},
-  {id:'mantis',  name:'MANTIS',   col:'#4f8',hp:3,spd:5.2,fd:12,sb:0,sp:'mantis',pc:5,
-   desc:'カマキリ型\nHP●●●  速度●●●●\n前方集中3点射',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-8,14,-2,4,0,12,2,4,8,14,0,-22],col,col);mkH(cx,[-16,8,-10,0,-10,12],col,null);mkH(cx,[16,8,10,0,10,12],col,null)}},
-  {id:'sunfire', name:'SUNFIRE',  col:'#f84',hp:4,spd:4.0,fd:15,sb:0,sp:'sunfire',pc:5,
-   desc:'太陽型\nHP●●●●  速度●●●\n時間経過で強化',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);cx.fillStyle=col;cx.shadowColor=col;cx.shadowBlur=14;cx.beginPath();cx.arc(0,0,14,0,Math.PI*2);cx.fill();cx.shadowBlur=0;cock(cx,0,-2,6,'rgba(255,255,200,.2)')}},
-  {id:'glacius', name:'GLACIUS',  col:'#aef',hp:5,spd:3.2,fd:16,sb:0,sp:'freeze',pc:5,
-   desc:'氷型\nHP●●●●●  速度●●\n弾が敵を凍結・遅くする',
+  {id:'glacius',name:'GLACIUS',col:'#aef',hp:5,spd:3.2,fd:16,sb:0,sp:'freeze',pc:5,
+   desc:'氷結弾',ult:{name:'ブリザード',desc:'全敵を長時間氷結'},
    fn(cx,x,y,col,t){mkE(cx,0,14,2,t);mkH(cx,[-16,14,-8,6,0,12,8,6,16,14,0,-20],col,col);ctx.strokeStyle=col+'88';ctx.lineWidth=1.5;for(let i=0;i<6;i++){let a=i*Math.PI/3;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(Math.cos(a)*14,Math.sin(a)*14);ctx.stroke()}}},
-  {id:'inferno', name:'INFERNO',  col:'#f62',hp:3,spd:5.0,fd:15,sb:0,sp:'inferno',pc:5,
-   desc:'炎型\nHP●●●  速度●●●●\n弾が貫通＋燃焼',
+  {id:'inferno',name:'INFERNO',col:'#f62',hp:3,spd:5.0,fd:15,sb:0,sp:'inferno',pc:5,
+   desc:'炎貫通弾',ult:{name:'インフェルノ',desc:'全画面を炎で焼き尽くす'},
    fn(cx,x,y,col,t){mkE(cx,0,14,2,t);mkH(cx,[-14,14,-6,4,0,12,6,4,14,14,0,-20],col,col);if(t){cx.fillStyle='rgba(255,80,0,.3)';for(let i=0;i<2;i++){cx.beginPath();cx.ellipse(rnd(-4,4),rnd(-12,-4),3,5+Math.random()*3,0,0,Math.PI*2);cx.fill()}}}},
-  {id:'void_s',  name:'VOID SHIP',col:'#60f',hp:3,spd:4.5,fd:16,sb:0,sp:'split',  pc:5,
-   desc:'虚空型\nHP●●●  速度●●●\n弾が分裂する',
+  {id:'void_s',name:'VOID SHIP',col:'#60f',hp:3,spd:4.5,fd:16,sb:0,sp:'split',pc:5,
+   desc:'分裂弾',ult:{name:'ヴォイドコラプス',desc:'画面中心に重力崩壊を発生'},
    fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-14,14,-6,4,0,10,6,4,14,14,0,-18],col,col);cx.fillStyle=col+'22';cx.beginPath();cx.arc(0,0,18,0,Math.PI*2);cx.fill()}},
-  {id:'nemesis', name:'NEMESIS',  col:'#f08',hp:5,spd:4.0,fd:15,sb:0,sp:'nemesis',pc:5,
-   desc:'復讐型\nHP●●●●●  速度●●●\n被弾で反撃弾',
+  {id:'nemesis',name:'NEMESIS',col:'#f08',hp:5,spd:4.0,fd:15,sb:0,sp:'nemesis',pc:5,
+   desc:'被弾反撃',ult:{name:'ネメシスフォーム',desc:'一定時間被弾ごとに大反撃'},
    fn(cx,x,y,col,t){mkE(cx,0,14,2,t);mkH(cx,[-18,14,-8,6,0,12,8,6,18,14,0,-20],col,col);cx.fillStyle=col+'44';cx.beginPath();cx.arc(0,0,10,0,Math.PI*2);cx.fill()}},
-  {id:'stweav',  name:'STARWEAVER',col:'#ffa',hp:3,spd:5.0,fd:15,sb:0,sp:'star',  pc:5,
-   desc:'星紡型\nHP●●●  速度●●●●\n弾が星型に広がる',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);cx.fillStyle=col;cx.shadowColor=col;cx.shadowBlur=12;cx.beginPath();let pts=[];for(let i=0;i<10;i++){let a=i*Math.PI/5-Math.PI/2,r=i%2===0?16:8;i===0?cx.moveTo(Math.cos(a)*r,Math.sin(a)*r):cx.lineTo(Math.cos(a)*r,Math.sin(a)*r)}cx.closePath();cx.fill();cx.shadowBlur=0}},
-  {id:'storm',   name:'STORM',    col:'#48f',hp:3,spd:5.5,fd:13,sb:1,sp:'storm',  pc:5,
-   desc:'嵐型\nHP●●●  速度●●●●\n弾が乱れ飛ぶ',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-14,14,-4,4,0,12,4,4,14,14,0,-20],col,col);ctx.strokeStyle=col+'66';ctx.lineWidth=1;ctx.beginPath();ctx.arc(0,2,12,0,Math.PI*2);ctx.stroke()}},
-  {id:'oracle',  name:'ORACLE',   col:'#f4a',hp:3,spd:4.0,fd:17,sb:0,sp:'oracle', pc:5,
-   desc:'予言者型\nHP●●●  速度●●●\n先読み弾道',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-12,12,-16,18,0,10,16,18,12,12,0,-18],col,col);cx.fillStyle=col+'44';cx.beginPath();cx.arc(0,-6,7,0,Math.PI*2);cx.fill()}},
-  {id:'titan2',  name:'TITAN II', col:'#fa4',hp:6,spd:2.8,fd:10,sb:2,sp:'',       pc:8,
-   desc:'重装型II\nHP●●●●●●  速度●●\n火力●●●●●',
-   fn(cx,x,y,col,t){mkE(cx,0,14,3,t);mkH(cx,[-22,16,-10,8,0,14,10,8,22,16,0,-22],col,col);cx.fillStyle='rgba(255,255,255,.1)';cx.fillRect(-6,-10,12,16)}},
-  {id:'alpha',   name:'ALPHA',    col:'#0af',hp:3,spd:5.0,fd:12,sb:0,sp:'alpha',  pc:8,
-   desc:'α型\nHP●●●  速度●●●●\n全ステ少し高め',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-15,14,-6,6,0,12,6,6,15,14,0,-20],col,col);cock(cx,0,-4,5)}},
-  {id:'omega_s', name:'OMEGA-S',  col:'#f44',hp:5,spd:4.5,fd:12,sb:1,sp:'omega',  pc:10,
-   desc:'Ω型\nHP●●●●●  速度●●●●\n全弾強化+連射',
+  {id:'omega_s',name:'OMEGA-S',col:'#f44',hp:5,spd:4.5,fd:12,sb:1,sp:'omega',pc:10,
+   desc:'全弾強化',ult:{name:'Ωオーバードライブ',desc:'全ステータス2倍・短時間'},
    fn(cx,x,y,col,t){mkE(cx,0,14,2,t);cx.fillStyle=col;cx.shadowColor=col;cx.shadowBlur=16;cx.beginPath();cx.arc(0,0,16,0,Math.PI*2);cx.fill();cx.shadowBlur=0;cx.fillStyle='#020818';cx.beginPath();cx.arc(0,4,8,0,Math.PI*2);cx.fill()}},
-  {id:'nebula_s',name:'NEBULA-S', col:'#84f',hp:4,spd:4.5,fd:14,sb:1,sp:'nebula', pc:8,
-   desc:'星雲型\nHP●●●●  速度●●●\n弾が霧状に広がる',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-14,14,-6,4,0,12,6,4,14,14,0,-18],col,col);cx.fillStyle=col+'28';for(let i=0;i<3;i++){cx.beginPath();cx.arc(rnd(-6,6),rnd(-8,0),5+i*2,0,Math.PI*2);cx.fill()}}},
-  {id:'crystal', name:'CRYSTAL',  col:'#cff',hp:3,spd:4.5,fd:15,sb:0,sp:'crystal',pc:8,
-   desc:'水晶型\nHP●●●  速度●●●\n弾が反射する',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);cx.fillStyle=col;cx.shadowColor=col;cx.shadowBlur=14;cx.beginPath();for(let i=0;i<6;i++){let a=i*Math.PI/3-Math.PI/2;i===0?cx.moveTo(Math.cos(a)*16,Math.sin(a)*16):cx.lineTo(Math.cos(a)*16,Math.sin(a)*16)}cx.closePath();cx.fill();cx.shadowBlur=0}},
-  {id:'phantom2',name:'PHANTOM II',col:'#6cf',hp:3,spd:7.0,fd:22,sb:0,sp:'stealth',pc:8,
-   desc:'ステルスII\nHP●●●  速度●●●●●\n透明時間長い',
-   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-10,14,-6,2,0,10,6,2,10,14,0,-22],col,col);cx.fillStyle=col+'18';cx.beginPath();cx.ellipse(0,0,14,20,0,0,Math.PI*2);cx.fill()}},
-  {id:'omni',    name:'OMNI',     col:'#fff',hp:5,spd:4.5,fd:14,sb:2,sp:'omni',  pc:10,
-   desc:'全能型\nHP●●●●●  速度●●●\n全方向弾・最強',
+  {id:'omni',name:'OMNI',col:'#fff',hp:5,spd:4.5,fd:14,sb:2,sp:'omni',pc:10,
+   desc:'全方向弾',ult:{name:'全能爆発',desc:'全方向に巨大な爆発'},
    fn(cx,x,y,col,t){mkE(cx,0,14,2,t);cx.fillStyle=col;cx.shadowColor=col;cx.shadowBlur=16;cx.beginPath();for(let i=0;i<8;i++){let a=i*Math.PI/4-Math.PI/2,r=i%2===0?18:11;i===0?cx.moveTo(Math.cos(a)*r,Math.sin(a)*r):cx.lineTo(Math.cos(a)*r,Math.sin(a)*r)}cx.closePath();cx.fill();cx.shadowBlur=0;cock(cx,0,0,5,'rgba(0,200,255,.4)')}},
+  // ─── NEW SHIPS ───
+  {id:'prism',name:'PRISM',col:'#f8f',hp:3,spd:4.8,fd:14,sb:0,sp:'prism',pc:5,
+   desc:'プリズム型\n弾が虹色に分裂',ult:{name:'レインボーバースト',desc:'7色弾が全方位に'},
+   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);cx.fillStyle=col;cx.shadowColor=col;cx.shadowBlur=14;cx.beginPath();for(let i=0;i<6;i++){let a=i*Math.PI/3-Math.PI/2;i===0?cx.moveTo(Math.cos(a)*16,Math.sin(a)*16):cx.lineTo(Math.cos(a)*16,Math.sin(a)*16)}cx.closePath();cx.fill();cx.shadowBlur=0;cx.fillStyle='rgba(255,255,255,.3)';cx.beginPath();cx.arc(0,0,6,0,Math.PI*2);cx.fill()}},
+  {id:'knight',name:'KNIGHT',col:'#8cf',hp:6,spd:3.5,fd:13,sb:1,sp:'shield_bash',pc:5,
+   desc:'騎士型\n受けるダメ半減',ult:{name:'セイクリッドシールド',desc:'完全無敵バリア展開'},
+   fn(cx,x,y,col,t){mkE(cx,0,14,2,t);mkH(cx,[-16,14,-8,6,0,12,8,6,16,14,0,-20],col,col);cx.fillStyle=col+'44';cx.fillRect(-12,-14,24,20);cx.fillStyle='rgba(255,255,255,.15)';cx.fillRect(-5,-12,10,16)}},
+  {id:'reaper',name:'REAPER',col:'#a4a',hp:2,spd:6.0,fd:16,sb:0,sp:'reaper',pc:5,
+   desc:'死神型\n敵撃破でゲージ回復',ult:{name:'デスハーベスト',desc:'全敵即死（ボス除く）'},
+   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-10,14,-4,4,0,12,4,4,10,14,0,-22],col,col);cx.strokeStyle=col;cx.lineWidth=2;cx.shadowColor=col;cx.shadowBlur=8;cx.beginPath();cx.moveTo(6,-12);cx.quadraticCurveTo(16,-20,14,-8);cx.stroke();cx.shadowBlur=0}},
+  {id:'tempest',name:'TEMPEST',col:'#48f',hp:3,spd:5.0,fd:13,sb:1,sp:'storm',pc:5,
+   desc:'嵐型・乱れ弾',ult:{name:'テンペスト',desc:'竜巻を3本同時発生'},
+   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-14,14,-4,4,0,12,4,4,14,14,0,-20],col,col);ctx.strokeStyle=col+'66';ctx.lineWidth=1.5;for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(0,0,6+i*5,0,Math.PI*2);ctx.stroke()}}},
+  {id:'solaris',name:'SOLARIS',col:'#ff6',hp:4,spd:4.2,fd:15,sb:0,sp:'sunfire',pc:8,
+   desc:'太陽型・時間強化',ult:{name:'ソーラーフレア',desc:'画面全体を太陽フレアで灼熱'},
+   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);cx.fillStyle=col;cx.shadowColor=col;cx.shadowBlur=16;cx.beginPath();cx.arc(0,0,14,0,Math.PI*2);cx.fill();cx.shadowBlur=0;for(let i=0;i<8;i++){let a=i*Math.PI/4+(t?gs&&gs.tick*.02:0);ctx.strokeStyle=col+'88';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(Math.cos(a)*14,Math.sin(a)*14);ctx.lineTo(Math.cos(a)*20,Math.sin(a)*20);ctx.stroke()}}},
+  {id:'wraith2',name:'WRAITH-X',col:'#d0f',hp:2,spd:7.5,fd:19,sb:0,sp:'wraith',pc:8,
+   desc:'強化亡霊型\n無敵2倍',ult:{name:'レイス侵食',desc:'全弾を吸収し反射する'},
+   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-10,14,-6,4,0,10,6,4,10,14,0,-22],col,col);cx.fillStyle=col+'1a';cx.beginPath();cx.ellipse(0,0,18,24,0,0,Math.PI*2);cx.fill();cx.fillStyle=col+'0a';cx.beginPath();cx.ellipse(0,0,26,32,0,0,Math.PI*2);cx.fill()}},
+  {id:'guardian',name:'GUARDIAN',col:'#4f4',hp:8,spd:2.5,fd:12,sb:2,sp:'',pc:8,
+   desc:'守護型\n超高HP・低速',ult:{name:'守護の壁',desc:'全弾を一定時間防ぐ盾を展開'},
+   fn(cx,x,y,col,t){mkE(cx,0,14,3,t);mkH(cx,[-20,16,-10,8,0,14,10,8,20,16,0,-22],col,col);cx.fillStyle=col+'55';cx.beginPath();cx.arc(0,0,22,Math.PI*.8,Math.PI*.2,true);cx.closePath();cx.fill()}},
+  {id:'lightning',name:'LIGHTNING',col:'#ff4',hp:3,spd:5.5,fd:14,sb:1,sp:'thunder',pc:8,
+   desc:'雷型・広域弾',ult:{name:'サンダーボルト',desc:'画面全体に落雷'},
+   fn(cx,x,y,col,t){mkE(cx,0,14,1,t);mkH(cx,[-14,14,-6,4,0,12,6,4,14,14,0,-18],col,col);cx.fillStyle=col+'88';cx.beginPath();cx.moveTo(-4,-14);cx.lineTo(4,-6);cx.lineTo(0,-4);cx.lineTo(8,8);cx.lineTo(-4,-2);cx.lineTo(0,-4);cx.lineTo(-8,6);cx.closePath();cx.fill()}},
 ];
 
 // ── 200 STAGES ──
@@ -451,18 +409,136 @@ function bd2(cx,b,t){cx.save();cx.translate(b.x,b.y);cx.shadowColor=b.col;cx.sha
 function bd3(cx,b,t){cx.save();cx.translate(b.x,b.y);cx.rotate(t*.008);cx.shadowColor=b.col;cx.shadowBlur=14+Math.sin(t*.07)*5;cx.fillStyle=b.col;cx.beginPath();cx.ellipse(0,0,b.w/2,b.h/2,0,0,Math.PI*2);cx.fill();cx.shadowBlur=0;cx.rotate(-t*.016);cx.fillStyle=b.col+'55';cx.beginPath();for(let i=0;i<6;i++){let a=i*Math.PI/3;cx.lineTo(Math.cos(a)*b.w*.34,Math.sin(a)*b.h*.34)}cx.closePath();cx.fill();cx.restore()}
 function bd4(cx,b,t){cx.save();cx.translate(b.x,b.y);cx.shadowColor=b.col;cx.shadowBlur=16+Math.sin(t*.06)*6;cx.fillStyle=b.col;cx.fillRect(-b.w/2,-b.h/2,b.w,b.h);cx.shadowBlur=0;cx.fillStyle=b.col+'44';for(let i=-1;i<=1;i++)cx.fillRect(i*b.w*.27-4,-b.h*.4,8,b.h*.8);cx.restore()}
 
+// ── ULTIMATE SYSTEM ──
+function activateUlt(p){
+  if(!gs||!gs.alive||gs.p.ultGauge<ULT_MAX)return;
+  gs.p.ultGauge=0;
+  let sh=CS(),dmgMult=gUltDmgMult(),durMult=gUltDurMult();
+  let id=sh.id,m=sh.col;
+  showNotif('⚡ '+sh.ult.name+'!',m);
+  addF(p.x,p.y,'ULTIMATE!',m);
+  // ── Per-ship ultimates ──
+  switch(id){
+    case 'falcon':{// 全方位弾幕
+      let n=24+lv('ultDamage')*4;
+      for(let i=0;i<n;i++){let a=i/n*Math.PI*2;gs.bullets.push({x:p.x,y:p.y,vx:Math.cos(a)*10,vy:Math.sin(a)*10,dmg:Math.ceil(gDmg()*3*dmgMult),bw:gBW()*1.5,bh:gBH()*1.5,pi:99,hits:0,bomber:false,split:false})}
+    }break;
+    case 'titan':{// 全画面衝撃波
+      let d=Math.ceil(15*dmgMult);
+      for(let e of gs.enemies){e.hp-=d;spP(e.x,e.y,'#f80',8)}
+      if(gs.boss){gs.boss.hp-=Math.ceil(d*2);spP(gs.boss.x,gs.boss.y,'#f80',20)}
+      spP(W/2,H/2,'#f80',80);showBanner('⚠ SHOCKWAVE',false);
+    }break;
+    case 'specter':case 'wraith2':{// フェイズシフト: 無敵+高速
+      let dur=Math.round(180*durMult);p.inv=dur;p.phaseShift=dur;gs.p.ultEffect={type:'phase',timer:dur};
+    }break;
+    case 'nova':{// ノヴァビーム
+      gs.ultBeam={x:p.x,timer:Math.round(90*durMult),col:'#0f8',dmg:Math.ceil(30*dmgMult)};
+    }break;
+    case 'bomber':{// 絨毯爆撃
+      for(let i=0;i<16;i++){let bx2=rnd(40,W-40),by2=rnd(0,H*.6);
+        setTimeout(()=>{for(let e of gs.enemies||[]){let d=Math.sqrt((e.x-bx2)**2+(e.y-by2)**2);if(d<80)e.hp-=Math.ceil(20*dmgMult)}if(gs&&gs.boss){let d=Math.sqrt((gs.boss.x-bx2)**2+(gs.boss.y-by2)**2);if(d<100)gs.boss.hp-=Math.ceil(40*dmgMult)}if(gs)spP(bx2,by2,'#f80',20)},i*80)}
+    }break;
+    case 'viper':{// バレットストーム
+      let dur=Math.round(120*durMult);gs.p.ultEffect={type:'storm',timer:dur};
+    }break;
+    case 'colossus':{// コロッサスラム
+      let dmg=Math.ceil(40*dmgMult);
+      for(let e of gs.enemies){e.hp-=dmg;spP(e.x,e.y,'#a88',10)}
+      if(gs.boss)gs.boss.hp-=Math.ceil(dmg*3);
+      spP(p.x,p.y,'#a88',60);
+    }break;
+    case 'angel':{// 回復
+      p.hp=p.maxHp;let dur=Math.round(300*durMult);gs.p.ultEffect={type:'heal',timer:dur};
+      for(let i=0;i<30;i++)spP(rnd(0,W),rnd(0,H),'#0f8',2);
+    }break;
+    case 'phantom':{// 全弾消去+透明
+      gs.eb=[];let dur=Math.round(180*durMult);gs.p.ultEffect={type:'stealth',timer:dur};p.inv=dur;
+    }break;
+    case 'rescue':{// 全隊員救出
+      gs.soldiers.forEach(s=>{if(!s.rescued){s.rescued=true;gs.rescued++;sv.credits+=30+gs.stageId*2;addF(s.x,s.y,'+CR!','#0f8')}});p.hp=Math.min(p.maxHp,p.hp+2);showBanner('全員救出！',false);
+    }break;
+    case 'dragon':{// ドラゴンブレス
+      gs.ultBeam={x:p.x,timer:Math.round(60*durMult),col:'#f48',dmg:Math.ceil(25*dmgMult),wide:true};
+    }break;
+    case 'hawk':{// タロンストライク: 突撃
+      gs.p.ultEffect={type:'dash',timer:Math.round(60*durMult),vy:-20};
+    }break;
+    case 'glacius':{// ブリザード
+      for(let e of gs.enemies)e.frozen=Math.round(300*durMult);
+      if(gs.boss)gs.boss.frozen=(gs.boss.frozen||0)+Math.round(120*durMult);
+    }break;
+    case 'inferno':{// インフェルノ
+      let dmg=Math.ceil(8*dmgMult);
+      let dur=Math.round(120*durMult);gs.p.ultEffect={type:'inferno',timer:dur,dmg};
+    }break;
+    case 'void_s':{// ヴォイドコラプス
+      let cx2=W/2,cy2=H/3,dmg=Math.ceil(50*dmgMult);
+      for(let e of gs.enemies){let d=Math.sqrt((e.x-cx2)**2+(e.y-cy2)**2);e.hp-=Math.ceil(dmg*(1-d/W));spP(e.x,e.y,'#60f',6)}
+      if(gs.boss)gs.boss.hp-=Math.ceil(dmg*.5);
+      gs.ultBlackhole={x:cx2,y:cy2,timer:Math.round(90*durMult),r:0};
+    }break;
+    case 'nemesis':{// ネメシスフォーム
+      let dur=Math.round(240*durMult);gs.p.ultEffect={type:'nemesis_ult',timer:dur};
+    }break;
+    case 'omega_s':{// オーバードライブ
+      let dur=Math.round(120*durMult);gs.p.ultEffect={type:'overdrive',timer:dur};
+    }break;
+    case 'omni':{// 全能爆発
+      let n=36,dmg=Math.ceil(20*dmgMult);
+      for(let i=0;i<n;i++){let a=i/n*Math.PI*2;for(let j=1;j<=3;j++)gs.bullets.push({x:p.x,y:p.y,vx:Math.cos(a)*8*j,vy:Math.sin(a)*8*j,dmg,bw:gBW()*2,bh:gBH()*2,pi:99,hits:0,bomber:false,split:false})}
+    }break;
+    case 'prism':{// レインボーバースト
+      let cols=['#f44','#f80','#ff0','#0f4','#0ff','#00f','#f0f'];
+      for(let ci=0;ci<7;ci++){let a=ci/7*Math.PI*2;for(let j=0;j<4;j++){let a2=a+j*.15;gs.bullets.push({x:p.x,y:p.y,vx:Math.cos(a2)*9,vy:Math.sin(a2)*9,dmg:Math.ceil(8*dmgMult),bw:gBW(),bh:gBH(),pi:5,hits:0,bomber:false,split:false,col:cols[ci]})}}
+    }break;
+    case 'knight':{// セイクリッドシールド
+      let dur=Math.round(200*durMult);gs.p.ultEffect={type:'barrier',timer:dur};gs.p.inv=dur;
+    }break;
+    case 'reaper':{// 全敵即死
+      let killAll=Math.ceil(999*dmgMult);
+      for(let e of gs.enemies){if(e.type!=='boss'){e.hp=-999;spP(e.x,e.y,'#a4a',12)}}
+    }break;
+    case 'tempest':{// 竜巻3本
+      gs.p.ultEffect={type:'tornado',timer:Math.round(150*durMult),angle:0,dmg:Math.ceil(5*dmgMult)};
+    }break;
+    case 'solaris':{// ソーラーフレア
+      let dmg=Math.ceil(12*dmgMult);let dur=Math.round(90*durMult);
+      gs.p.ultEffect={type:'solar',timer:dur,dmg};
+    }break;
+    case 'guardian':{// 守護の壁
+      let dur=Math.round(240*durMult);gs.p.ultEffect={type:'barrier',timer:dur};gs.p.inv=dur;
+    }break;
+    case 'lightning':{// サンダーボルト
+      let dmg=Math.ceil(10*dmgMult);
+      for(let e of gs.enemies){e.hp-=dmg*3;spP(e.x,e.y,'#ff4',10)}
+      if(gs.boss)gs.boss.hp-=Math.ceil(dmg*8);
+      for(let i=0;i<20;i++)gs.floats.push({x:rnd(0,W),y:rnd(0,H*.5),text:'⚡',life:30,color:'#ff4'});
+    }break;
+    default:{// フォールバック
+      let n=20;
+      for(let i=0;i<n;i++){let a=i/n*Math.PI*2;gs.bullets.push({x:p.x,y:p.y,vx:Math.cos(a)*9,vy:Math.sin(a)*9,dmg:Math.ceil(gDmg()*4*dmgMult),bw:gBW(),bh:gBH(),pi:5,hits:0,bomber:false,split:false})}
+    }
+  }
+  // ULT CD
+  let cd=Math.round(180*gUltCDMult());gs.p.ultCD=cd;
+}
+
 // ── GAME ──
 function initGame(si){
   curStage=si;let stg=STAGES[si];
   gs={score:0,stageId:si,wave:0,bossWave:false,bossAlive:false,alive:true,
-    p:{x:W/2,y:H-90,hp:0,maxHp:0,inv:0,scd:0,mcd:0,healTick:0,sunTick:0},
+    p:{x:W/2,y:H-90,hp:0,maxHp:0,inv:0,scd:0,mcd:0,healTick:0,sunTick:0,ultGauge:0,ultCD:0,ultEffect:null,phaseShift:0},
     bullets:[],missiles:[],eb:[],enemies:[],boss:null,
     boxes:[],pickups:[],soldiers:[],parts:[],stars:[],floats:[],
     tick:0,wt:0,ws:0,bg:stg.bg,
-    rapidBonus:0,rapidTimer:0,rescued:0};
+    rapidBonus:0,rapidTimer:0,rescued:0,
+    ultBeam:null,ultBlackhole:null};
   let sh=CS();gs.p.maxHp=sh.hp+lv('maxHp');gs.p.hp=gs.p.maxHp;
-  for(let i=0;i<160;i++) gs.stars.push({x:rnd(0,W),y:rnd(0,H),s:rnd(.3,1.8),sp:rnd(.15,.7),tw:rnd(0,60),hue:Math.random()<.15?rnd(0,360):0});
+  for(let i=0;i<160;i++)gs.stars.push({x:rnd(0,W),y:rnd(0,H),s:rnd(.3,1.8),sp:rnd(.15,.7),tw:rnd(0,60),hue:Math.random()<.15?rnd(0,360):0});
   updatePartsUI();startWave();
+  document.getElementById('ultbar').style.display='block';
+  document.getElementById('ult-lbl').textContent='▲ '+CS().ult.name+' [X]';
 }
 
 function startWave(){
@@ -481,13 +557,14 @@ function spawnBoss(){
   gs.boss={x:W/2,y:-def.h,w:def.w,h:def.h,
     hp:Math.round(def.hp*stg.mult),maxHp:Math.round(def.hp*stg.mult),
     col:def.col,phase:0,tick:0,angle:0,moveDir:1,
-    speed:1.2+gs.stageId*.04,shootTimer:0,fn:def.fn,name:def.name,targetY:H*.14};
+    speed:1.2+gs.stageId*.04,shootTimer:0,fn:def.fn,name:def.name,targetY:H*.14,frozen:0};
   gs.bossAlive=true;
 }
 
 function updateBoss(){
   let b=gs.boss,p=gs.p;if(!b)return;
   b.tick++;b.angle+=.11;
+  if(b.frozen>0){b.frozen--;return}
   if(b.y<b.targetY)b.y+=2.5;
   b.x+=b.speed*b.moveDir;
   if(b.x>W-b.w/2||b.x<b.w/2)b.moveDir*=-1;
@@ -519,27 +596,51 @@ function trySpawn(){
   let si=gs.stageId,m=STAGES[si].mult,roll=Math.random(),glowing=Math.random()<.09,e;
   let fixedChance=.08+si*.002;
   if(Math.random()<fixedChance){
+    // new turret: laser turret
     let ttype=Math.random();
-    if(ttype<.33)e={x:rnd(40,W-40),y:rnd(60,H*.4),w:34,h:34,hp:Math.round((6+si*.8)*m),maxHp:Math.round((6+si*.8)*m),speed:0,type:'turret_rapid',shootTimer:0,shootDelay:Math.max(8,30-si),credit:10+si*2,score:120,col:'#f0f',glowing:false,frozen:0,fixed:true};
-    else if(ttype<.66)e={x:rnd(40,W-40),y:rnd(60,H*.4),w:40,h:40,hp:Math.round((10+si)*m),maxHp:Math.round((10+si)*m),speed:0,type:'turret_heavy',shootTimer:0,shootDelay:Math.max(20,60-si),credit:14+si*3,score:180,col:'#f80',glowing:false,frozen:0,fixed:true};
-    else e={x:rnd(40,W-40),y:rnd(60,H*.4),w:30,h:30,hp:Math.round((4+si*.5)*m),maxHp:Math.round((4+si*.5)*m),speed:0,type:'turret_spread',shootTimer:0,shootDelay:Math.max(25,50-si),credit:8+si*2,score:100,col:'#ff4',glowing:false,frozen:0,fixed:true};
-  }else if(roll<.28)e={x:rnd(20,W-20),y:-40,w:26,h:26,hp:Math.round((1+si*.35)*m),maxHp:Math.round((1+si*.35)*m),speed:1.3+si*.08,type:'normal',shootTimer:0,shootDelay:Math.max(30,100-si*3),credit:5+si,score:60,col:'#0af',glowing:false,frozen:0,fixed:false};
-  else if(roll<.5)e={x:rnd(30,W-30),y:-50,w:38,h:38,hp:Math.round((4+si*.7)*m),maxHp:Math.round((4+si*.7)*m),speed:.9+si*.04,type:'tank',shootTimer:0,shootDelay:Math.max(20,65-si),credit:12+si*2,score:180,col:'#f80',glowing:false,frozen:0,fixed:false};
-  else if(roll<.68)e={x:rnd(20,W-20),y:-34,w:18,h:18,hp:1,maxHp:1,speed:2.8+si*.1,type:'fast',shootTimer:0,shootDelay:999,credit:3+si,score:40,col:'#0f8',glowing:false,frozen:0,fixed:false,zz:Math.random()>.5?1:-1};
-  else e={x:rnd(20,W-20),y:-44,w:32,h:32,hp:Math.round((3+si*.4)*m),maxHp:Math.round((3+si*.4)*m),speed:1.1+si*.05,type:'sniper',shootTimer:0,shootDelay:Math.max(40,120-si*4),credit:8+si*2,score:100,col:'#f4f',glowing:false,frozen:0,fixed:false};
-  if(glowing&&!e.fixed){e.glowing=true;e.glowTick=0;e.hp+=2;e.maxHp=e.hp}
+    if(ttype<.25)e={x:rnd(40,W-40),y:rnd(60,H*.4),w:34,h:34,hp:Math.round((6+si*.8)*m),maxHp:Math.round((6+si*.8)*m),speed:0,type:'turret_rapid',shootTimer:0,shootDelay:Math.max(8,30-si),credit:10+si*2,score:120,col:'#f0f',glowing:false,frozen:0,fixed:true};
+    else if(ttype<.5)e={x:rnd(40,W-40),y:rnd(60,H*.4),w:40,h:40,hp:Math.round((10+si)*m),maxHp:Math.round((10+si)*m),speed:0,type:'turret_heavy',shootTimer:0,shootDelay:Math.max(20,60-si),credit:14+si*3,score:180,col:'#f80',glowing:false,frozen:0,fixed:true};
+    else if(ttype<.75)e={x:rnd(40,W-40),y:rnd(60,H*.4),w:30,h:30,hp:Math.round((4+si*.5)*m),maxHp:Math.round((4+si*.5)*m),speed:0,type:'turret_spread',shootTimer:0,shootDelay:Math.max(25,50-si),credit:8+si*2,score:100,col:'#ff4',glowing:false,frozen:0,fixed:true};
+    else e={x:rnd(40,W-40),y:rnd(60,H*.4),w:36,h:36,hp:Math.round((8+si)*m),maxHp:Math.round((8+si)*m),speed:0,type:'turret_laser',shootTimer:0,shootDelay:Math.max(30,80-si),credit:12+si*3,score:150,col:'#0ff',glowing:false,frozen:0,fixed:true,laserActive:0};
+  } else {
+    // new enemy types
+    let newEnemyChance=si>10?(si*.01):0;
+    if(Math.random()<newEnemyChance&&roll<.15){
+      // SHIELD enemy
+      e={x:rnd(20,W-20),y:-44,w:34,h:34,hp:Math.round((5+si*.6)*m),maxHp:Math.round((5+si*.6)*m),speed:1.0+si*.04,type:'shield_enemy',shootTimer:0,shootDelay:Math.max(35,90-si*2),credit:14+si*2,score:200,col:'#88f',glowing:false,frozen:0,fixed:false,shield:Math.round((3+si*.3)*m),maxShield:Math.round((3+si*.3)*m)};
+    } else if(Math.random()<newEnemyChance&&roll<.3){
+      // BOMBER enemy
+      e={x:rnd(20,W-20),y:-44,w:30,h:30,hp:Math.round((3+si*.4)*m),maxHp:Math.round((3+si*.4)*m),speed:1.5+si*.06,type:'enemy_bomber',shootTimer:0,shootDelay:Math.max(50,120-si*2),credit:10+si*2,score:150,col:'#fa4',glowing:false,frozen:0,fixed:false};
+    } else if(Math.random()<newEnemyChance*.5&&roll<.2){
+      // HEALER enemy (heals other enemies nearby)
+      e={x:rnd(20,W-20),y:-40,w:28,h:28,hp:Math.round((2+si*.3)*m),maxHp:Math.round((2+si*.3)*m),speed:1.1+si*.05,type:'healer',shootTimer:0,shootDelay:999,healTimer:0,credit:12+si*2,score:180,col:'#0fa',glowing:false,frozen:0,fixed:false};
+    } else if(roll<.28)e={x:rnd(20,W-20),y:-40,w:26,h:26,hp:Math.round((1+si*.35)*m),maxHp:Math.round((1+si*.35)*m),speed:1.3+si*.08,type:'normal',shootTimer:0,shootDelay:Math.max(30,100-si*3),credit:5+si,score:60,col:'#0af',glowing:false,frozen:0,fixed:false};
+    else if(roll<.5)e={x:rnd(30,W-30),y:-50,w:38,h:38,hp:Math.round((4+si*.7)*m),maxHp:Math.round((4+si*.7)*m),speed:.9+si*.04,type:'tank',shootTimer:0,shootDelay:Math.max(20,65-si),credit:12+si*2,score:180,col:'#f80',glowing:false,frozen:0,fixed:false};
+    else if(roll<.68)e={x:rnd(20,W-20),y:-34,w:18,h:18,hp:1,maxHp:1,speed:2.8+si*.1,type:'fast',shootTimer:0,shootDelay:999,credit:3+si,score:40,col:'#0f8',glowing:false,frozen:0,fixed:false,zz:Math.random()>.5?1:-1};
+    else e={x:rnd(20,W-20),y:-44,w:32,h:32,hp:Math.round((3+si*.4)*m),maxHp:Math.round((3+si*.4)*m),speed:1.1+si*.05,type:'sniper',shootTimer:0,shootDelay:Math.max(40,120-si*4),credit:8+si*2,score:100,col:'#f4f',glowing:false,frozen:0,fixed:false};
+  }
+  if(!e)return;
+  if(glowing&&!e.fixed&&e.type!=='healer'){e.glowing=true;e.glowTick=0;e.hp+=2;e.maxHp=e.hp}
   gs.enemies.push(e);
 }
 
 function shoot(){
   let p=gs.p,dmg=gDmg(),bw=gBW(),bh=gBH(),pi=gPierce(),sp=gSpread(),bspd=gBulletSpd();
-  let sh=CS(),arr=[{x:p.x,y:p.y-18,vx:0,vy:-13*bspd,dmg,bw,bh,pi,hits:0,bomber:sh.sp==='bomber',split:sh.sp==='split'}];
+  let sh=CS();
+  // Overdrive
+  let od=gs.p.ultEffect&&gs.p.ultEffect.type==='overdrive';
+  if(od){dmg*=2;bspd*=1.5}
+  let arr=[{x:p.x,y:p.y-18,vx:0,vy:-13*bspd,dmg,bw,bh,pi,hits:0,bomber:sh.sp==='bomber',split:sh.sp==='split'}];
   if(sh.sp!=='viper'){
     for(let i=1;i<=sp;i++)for(let s of[1,-1])arr.push({x:p.x,y:p.y-18,vx:Math.sin(i*.22*s)*13*bspd,vy:-Math.cos(i*.22)*13*bspd,dmg:Math.max(1,dmg-1),bw:bw*.7,bh:bh*.65,pi:0,hits:0,bomber:false,split:false});
     if(lv('triShot'))for(let a of[-Math.PI/4,Math.PI/4])arr.push({x:p.x,y:p.y-18,vx:Math.sin(a)*13*bspd,vy:-Math.cos(a)*13*bspd,dmg:Math.max(1,dmg-1),bw:bw*.65,bh:bh*.65,pi:0,hits:0,bomber:false,split:false});
     if(sh.sp==='mantis'){arr.push({x:p.x-8,y:p.y-10,vx:-1,vy:-13*bspd,dmg:Math.max(1,dmg-1),bw:bw*.6,bh:bh*.6,pi:0,hits:0,bomber:false,split:false});arr.push({x:p.x+8,y:p.y-10,vx:1,vy:-13*bspd,dmg:Math.max(1,dmg-1),bw:bw*.6,bh:bh*.6,pi:0,hits:0,bomber:false,split:false})}
     if(sh.sp==='hawk'){arr.push({x:p.x,y:p.y-14,vx:-4*bspd,vy:-10*bspd,dmg:Math.max(1,dmg-1),bw:bw*.6,bh:bh*.6,pi:0,hits:0,bomber:false,split:false});arr.push({x:p.x,y:p.y-14,vx:4*bspd,vy:-10*bspd,dmg:Math.max(1,dmg-1),bw:bw*.6,bh:bh*.6,pi:0,hits:0,bomber:false,split:false})}
+    if(sh.sp==='storm'){for(let i=0;i<3;i++){let ra=rnd(-0.4,0.4);arr.push({x:p.x,y:p.y-18,vx:Math.sin(ra)*13*bspd,vy:-Math.cos(ra)*13*bspd,dmg:Math.max(1,dmg-1),bw:bw*.6,bh:bh*.6,pi:0,hits:0,bomber:false,split:false})}}
+    if(sh.sp==='prism'){let cs=['#f44','#ff0','#0ff','#f0f','#0f8'];for(let i=0;i<2;i++){let a=rnd(-.25,.25);arr.push({x:p.x,y:p.y-18,vx:Math.sin(a)*13*bspd,vy:-Math.cos(a)*13*bspd,dmg:Math.max(1,dmg-1),bw:bw*.7,bh:bh*.7,pi:0,hits:0,bomber:false,split:false,col:cs[Math.floor(Math.random()*cs.length)]})}}
   }
+  // Storm ULT effect: extra random bullets
+  if(gs.p.ultEffect&&gs.p.ultEffect.type==='storm'){for(let i=0;i<6;i++){let a=rnd(-0.3,0.3);arr.push({x:p.x,y:p.y-18,vx:Math.sin(a)*14*bspd,vy:-Math.cos(a)*13*bspd,dmg:gDmg(),bw:bw*.7,bh:bh*.7,pi:gPierce(),hits:0,bomber:false,split:false})}}
   for(let b of arr)gs.bullets.push(b);
 }
 
@@ -553,17 +654,56 @@ function nearEnemy(x,y){let b=null,bd=Infinity;for(let e of gs.enemies){let d=(e
 function update(){
   if(!gs||!gs.alive||paused)return;
   gs.tick++;let p=gs.p,spd=gSpd();
-  if(keys['ArrowLeft']||keys['KeyA'])p.x=Math.max(18,p.x-spd);
-  if(keys['ArrowRight']||keys['KeyD'])p.x=Math.min(W-18,p.x+spd);
-  if(keys['ArrowUp']||keys['KeyW'])p.y=Math.max(18,p.y-spd);
-  if(keys['ArrowDown']||keys['KeyS'])p.y=Math.min(H-18,p.y+spd);
+  // Dash ULT
+  let dashing=p.ultEffect&&p.ultEffect.type==='dash';
+  if(dashing){p.y+=p.ultEffect.vy;p.ultEffect.timer--;if(p.ultEffect.timer<=0||p.y<50){p.ultEffect=null;p.y=Math.max(50,p.y)}
+    // dash kill
+    for(let e of gs.enemies){if(Math.abs(e.x-p.x)<40&&Math.abs(e.y-p.y)<40){e.hp-=999;spP(e.x,e.y,'#4af',15)}}
+  } else {
+    if(keys['ArrowLeft']||keys['KeyA'])p.x=Math.max(18,p.x-spd);
+    if(keys['ArrowRight']||keys['KeyD'])p.x=Math.min(W-18,p.x+spd);
+    if(keys['ArrowUp']||keys['KeyW'])p.y=Math.max(18,p.y-spd);
+    if(keys['ArrowDown']||keys['KeyS'])p.y=Math.min(H-18,p.y+spd);
+  }
+  // Special passives
   if(CS().sp==='heal'){p.healTick=(p.healTick||0)+1;if(p.healTick>=180&&p.hp<p.maxHp){p.hp++;p.healTick=0;showNotif('💚 HEAL','#0f8')}}
   if(CS().sp==='sunfire')p.sunTick=(p.sunTick||0)+1;
+  if(CS().id==='guardian')p.inv=Math.max(p.inv,0); // handled below
+  // Knight: halve damage (done via inv check offset)
   if(gs.rapidTimer>0){gs.rapidTimer--;if(gs.rapidTimer<=0){gs.rapidBonus=0;document.getElementById('h-rp').style.display='none'}}
   p.scd=Math.max(0,p.scd-1);if(keys['Space']&&p.scd<=0){shoot();p.scd=gFD(gs.rapidBonus)}
   p.mcd=Math.max(0,p.mcd-1);if(keys['KeyZ']&&p.mcd<=0&&gMslLv()){shootMsl();p.mcd=gMslCD()}
   p.inv=Math.max(0,p.inv-1);
-  let invBase=CS().sp==='wraith'?200:100;
+  // ULT key
+  p.ultCD=Math.max(0,(p.ultCD||0)-1);
+  if(keys['KeyX']&&p.ultGauge>=ULT_MAX&&!p.ultCD)activateUlt(p);
+  // ULT gauge fill
+  if(p.ultGauge<ULT_MAX)p.ultGauge=Math.min(ULT_MAX,p.ultGauge+gUltFill(.15));
+  // ULT effect tick
+  if(p.ultEffect){p.ultEffect.timer--;
+    if(p.ultEffect.type==='inferno'&&gs.tick%4===0){for(let e of gs.enemies){e.hp-=p.ultEffect.dmg;if(Math.random()<.1)spP(e.x,e.y,'#f62',3)}}
+    if(p.ultEffect.type==='solar'&&gs.tick%6===0){for(let e of gs.enemies){e.hp-=p.ultEffect.dmg;spP(e.x,e.y,'#ff6',2)}if(gs.boss)gs.boss.hp-=Math.ceil(p.ultEffect.dmg*.5)}
+    if(p.ultEffect.type==='heal'&&gs.tick%60===0&&p.hp<p.maxHp)p.hp++;
+    if(p.ultEffect.type==='nemesis_ult'&&p.inv>0&&gs.tick%8===0){for(let i=0;i<6;i++){let a=rnd(0,Math.PI*2);gs.bullets.push({x:p.x,y:p.y,vx:Math.cos(a)*10,vy:Math.sin(a)*10,dmg:gDmg()*3,bw:gBW(),bh:gBH(),pi:3,hits:0,bomber:false,split:false})}}
+    if(p.ultEffect.type==='tornado'){p.ultEffect.angle+=.06;let a=p.ultEffect.angle,d=p.ultEffect.dmg;
+      for(let t=0;t<3;t++){let ta=a+t*Math.PI*2/3;let tx2=p.x+Math.cos(ta)*100,ty2=p.y+Math.sin(ta)*100;
+        for(let e of gs.enemies){if(Math.abs(e.x-tx2)<40&&Math.abs(e.y-ty2)<40){e.hp-=d;spP(e.x,e.y,'#48f',3)}}}
+      gs.floats.push({x:p.x+Math.cos(a)*100,y:p.y+Math.sin(a)*100,text:'🌀',life:6,color:'#48f'})}
+    if(p.ultEffect.type==='barrier')gs.eb=gs.eb.filter(b=>Math.sqrt((b.x-p.x)**2+(b.y-p.y)**2)>50);
+    if(p.ultEffect.timer<=0)p.ultEffect=null;
+  }
+  // ULT beam update
+  if(gs.ultBeam){gs.ultBeam.timer--;let b2=gs.ultBeam;
+    for(let e of gs.enemies){if(Math.abs(e.x-b2.x)<(b2.wide?80:20)){e.hp-=b2.dmg;spP(e.x,e.y,b2.col,2)}}
+    if(gs.boss&&Math.abs(gs.boss.x-b2.x)<(b2.wide?100:30))gs.boss.hp-=Math.ceil(b2.dmg*.5);
+    if(gs.ultBeam.timer<=0)gs.ultBeam=null;
+  }
+  // Blackhole
+  if(gs.ultBlackhole){let bh2=gs.ultBlackhole;bh2.timer--;bh2.r=Math.min(120,(120-bh2.timer)*2);
+    for(let e of gs.enemies){let dx=e.x-bh2.x,dy=e.y-bh2.y,d=Math.sqrt(dx*dx+dy*dy);if(d<bh2.r+20){e.hp-=2;e.x-=dx*.04;e.y-=dy*.04}}
+    if(bh2.timer<=0)gs.ultBlackhole=null;
+  }
+  let invBase=CS().sp==='wraith'||CS().id==='wraith2'?200:100;
   for(let s of gs.stars){s.y+=s.sp;if(s.y>H){s.y=0;s.x=Math.random()*W}s.tw=(s.tw+1)%60}
   gs.floats=gs.floats.filter(f=>{f.y-=.65;f.life--;return f.life>0});
   for(let e of gs.enemies)if(e.glowing)e.glowTick=(e.glowTick||0)+1;
@@ -574,9 +714,8 @@ function update(){
   gs.soldiers=gs.soldiers.filter(sol=>{
     sol.y+=sol.speed;sol.tick++;sol.bph+=.04;
     if(!sol.rescued){
-      let dx=sol.x-p.x,dy=sol.y-p.y,d=Math.sqrt(dx*dx+dy*dy);
-      let inRange=d<rr;
-      if(inRange){sol.rescuing=true;sol.rescueTick++;if(sol.rescueTick>=gRescueTime()){sol.rescued=true;gs.rescued++;let cr=15+gs.stageId*2;sv.credits+=cr;gs.score+=200;addF(sol.x,sol.y,'+'+cr+'CR！','#0f8');showNotif('👤 救助！','#0f8');document.getElementById('h-rw').style.display='flex';document.getElementById('h-rv').textContent=gs.rescued}}
+      let dx=sol.x-p.x,dy=sol.y-p.y,d=Math.sqrt(dx*dx+dy*dy),inRange=d<rr;
+      if(inRange){sol.rescuing=true;sol.rescueTick++;if(sol.rescueTick>=gRescueTime()){sol.rescued=true;gs.rescued++;let cr=15+gs.stageId*2;sv.credits+=cr;gs.score+=200;addF(sol.x,sol.y,'+'+cr+'CR！','#0f8');showNotif('👤 救助！','#0f8');document.getElementById('h-rw').style.display='flex';document.getElementById('h-rv').textContent=gs.rescued;p.ultGauge=Math.min(ULT_MAX,p.ultGauge+gUltFill(30))}}
       else{sol.rescuing=false;sol.rescueTick=Math.max(0,sol.rescueTick-1)}
     }
     return sol.y<H+30&&!sol.rescued;
@@ -592,6 +731,9 @@ function update(){
   gs.missiles=gs.missiles.filter(m=>m.life>0&&m.y<H+20);
   gs.eb=gs.eb.filter(b=>{b.x+=b.vx;b.y+=b.vy;return b.y<H+14&&b.y>-14&&b.x>-14&&b.x<W+14});
   for(let e of gs.enemies)if(e.frozen>0)e.frozen--;
+  // Healer enemy logic
+  for(let e of gs.enemies){
+    if(e.type==='healer'){e.healTimer=(e.healTimer||0)+1;if(e.healTimer>=90){e.healTimer=0;for(let ne of gs.enemies){if(ne!==e){let d=Math.sqrt((ne.x-e.x)**2+(ne.y-e.y)**2);if(d<120){ne.hp=Math.min(ne.maxHp,ne.hp+3);addF(ne.x,ne.y,'+3','#0fa')}}}}}}
   trySpawn();
   for(let e of gs.enemies){
     if(e.fixed)continue;
@@ -602,34 +744,52 @@ function update(){
     e.shootTimer++;
     if(e.shootTimer>=e.shootDelay){e.shootTimer=0;enemyShoot(e,p)}
   }
-  for(let e of gs.enemies){
-    if(!e.fixed)continue;
-    e.shootTimer++;
-    if(e.shootTimer>=e.shootDelay){e.shootTimer=0;enemyShoot(e,p)}
-  }
+  for(let e of gs.enemies){if(!e.fixed)continue;e.shootTimer++;if(e.shootTimer>=e.shootDelay){e.shootTimer=0;enemyShoot(e,p)}}
   if(gs.bossAlive&&gs.boss)updateBoss();
+  // bullet-box
   for(let b of gs.bullets)for(let bx of gs.boxes){if(bx.hp<=0)continue;if(Math.abs(b.x-bx.x)<bx.w/2+b.bw/2&&Math.abs(b.y-bx.y)<bx.h/2+b.bh/2){bx.hp-=b.dmg;b.hits=b.pi+1;spP(bx.x,bx.y,'#a86',4);if(bx.hp<=0){spawnPickup(bx.x,bx.y);for(let i=0;i<8;i++)spP(bx.x+rnd(-10,10),bx.y+rnd(-10,10),'#c96',3)}}}
+  // bullet-enemy
   for(let b of gs.bullets){
     for(let e of gs.enemies){
       if(b.hits>b.pi)break;
       if(Math.abs(b.x-e.x)<e.w/2+b.bw/2&&Math.abs(b.y-e.y)<e.h/2+b.bh/2){
+        // Shield enemy
+        if(e.type==='shield_enemy'&&(e.shield||0)>0){e.shield-=b.dmg;b.hits++;spP(e.x,e.y,'#88f',2);if(e.shield<0)e.shield=0;continue}
         e.hp-=b.dmg;b.hits++;spP(e.x,e.y,e.col,3);addF(e.x,e.y,b.dmg,'#fff');
+        // ULT gauge fill on hit
+        p.ultGauge=Math.min(ULT_MAX,p.ultGauge+gUltFill(1));
         if(b.bomber){for(let ne of gs.enemies){let d=Math.sqrt((ne.x-e.x)**2+(ne.y-e.y)**2);if(d<42&&ne!==e)ne.hp-=Math.ceil(b.dmg*.5)}spP(e.x,e.y,'#f80',8)}
         if(CS().sp==='freeze')e.frozen=120;
         if(b.split&&Math.random()<.5){gs.bullets.push({x:b.x,y:b.y,vx:-3,vy:-8,dmg:Math.ceil(b.dmg*.5),bw:b.bw*.6,bh:b.bh*.6,pi:0,hits:0,bomber:false,split:false});gs.bullets.push({x:b.x,y:b.y,vx:3,vy:-8,dmg:Math.ceil(b.dmg*.5),bw:b.bw*.6,bh:b.bh*.6,pi:0,hits:0,bomber:false,split:false})}
       }
     }
-    if(gs.bossAlive&&gs.boss){let bo=gs.boss;if(Math.abs(b.x-bo.x)<bo.w/2&&Math.abs(b.y-bo.y)<bo.h/2){bo.hp-=b.dmg;b.hits=b.pi+1;spP(bo.x,bo.y,bo.col,2);addF(bo.x+rnd(-20,20),bo.y+rnd(-10,10),b.dmg,'#f0f')}}
+    if(gs.bossAlive&&gs.boss){let bo=gs.boss;if(Math.abs(b.x-bo.x)<bo.w/2&&Math.abs(b.y-bo.y)<bo.h/2){bo.hp-=b.dmg;b.hits=b.pi+1;spP(bo.x,bo.y,bo.col,2);addF(bo.x+rnd(-20,20),bo.y+rnd(-10,10),b.dmg,'#f0f');p.ultGauge=Math.min(ULT_MAX,p.ultGauge+gUltFill(3))}}
   }
   gs.bullets=gs.bullets.filter(b=>b.hits<=b.pi);
   for(let m of gs.missiles){let hit=false;for(let e of gs.enemies){let dx=m.x-e.x,dy=m.y-e.y;if(Math.sqrt(dx*dx+dy*dy)<e.w/2+7){e.hp=0;hit=true;spP(e.x,e.y,'#f80',10);addF(e.x,e.y,'KO','#f80');break}}if(!hit&&gs.bossAlive&&gs.boss){let bo=gs.boss;if(Math.sqrt((m.x-bo.x)**2+(m.y-bo.y)**2)<bo.w/2+8){let dd=gBMslDmg();bo.hp-=dd;hit=true;spP(bo.x,bo.y,'#f80',6);addF(bo.x+rnd(-20,20),bo.y,dd,'#f80')}}if(hit)m.life=0}
   gs.missiles=gs.missiles.filter(m=>m.life>0);
   if(CS().sp==='nemesis'&&p.inv>0&&p.inv===invBase-1){for(let i=0;i<4;i++){let a=rnd(0,Math.PI*2);gs.bullets.push({x:p.x,y:p.y,vx:Math.cos(a)*8,vy:Math.sin(a)*8,dmg:gDmg()*2,bw:gBW(),bh:gBH(),pi:2,hits:0,bomber:false,split:false})}}
+  // Wraith X: absorb and reflect
+  if(CS().id==='wraith2'&&p.ultEffect&&p.ultEffect.type==='stealth'){
+    for(let b of gs.eb){let dx=b.x-p.x,dy=b.y-p.y;if(Math.sqrt(dx*dx+dy*dy)<30){b.vx*=-1;b.vy*=-1;spP(b.x,b.y,'#d0f',3)}}
+  }
   let dead=gs.enemies.filter(e=>e.hp<=0);
-  for(let e of dead){spP(e.x,e.y,e.col,10);if(e.glowing){for(let i=0;i<18;i++){let a=rnd(0,Math.PI*2),s=rnd(2,5);gs.parts.push({x:e.x,y:e.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:50,color:'#ff0',r:rnd(2,4)})}triggerRapid()}sv.credits+=e.credit;gs.score+=e.score;addF(e.x,e.y-10,'+'+e.credit,'#ffd700')}
+  for(let e of dead){
+    spP(e.x,e.y,e.col,10);
+    if(e.glowing){for(let i=0;i<18;i++){let a=rnd(0,Math.PI*2),s=rnd(2,5);gs.parts.push({x:e.x,y:e.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:50,color:'#ff0',r:rnd(2,4)})}triggerRapid()}
+    sv.credits+=e.credit;gs.score+=e.score;addF(e.x,e.y-10,'+'+e.credit,'#ffd700');
+    p.ultGauge=Math.min(ULT_MAX,p.ultGauge+gUltFill(8));
+    // reaper: extra gauge
+    if(CS().id==='reaper')p.ultGauge=Math.min(ULT_MAX,p.ultGauge+gUltFill(20));
+  }
   gs.enemies=gs.enemies.filter(e=>e.hp>0&&(e.fixed||e.y<H+60));
   if(gs.bossAlive&&gs.boss&&gs.boss.hp<=0){let bo=gs.boss;spP(bo.x,bo.y,bo.col,70);let rw=Math.round(100*(gs.stageId+1)*STAGES[gs.stageId].mult*.5);sv.credits+=rw;gs.score+=rw*10;addF(bo.x,bo.y,'+'+rw+'CR!','#f0f');gs.bossAlive=false;gs.boss=null;document.getElementById('bbwrap').style.display='none';setTimeout(stageClear,800);return}
-  if(p.inv<=0){for(let b of gs.eb){if(Math.abs(b.x-p.x)<14&&Math.abs(b.y-p.y)<14){if(CS().sp==='stealth'&&Math.random()<.3){b.y=9999;continue}b.y=9999;p.hp--;p.inv=invBase;spP(p.x,p.y,'#f44',14);if(p.hp<=0){endGame();return}}}for(let e of gs.enemies){if(!e.fixed&&Math.abs(e.x-p.x)<(e.w+20)/2&&Math.abs(e.y-p.y)<(e.h+20)/2){e.hp=0;p.hp--;p.inv=invBase;spP(p.x,p.y,'#f44',14);if(p.hp<=0){endGame();return}}}}
+  if(p.inv<=0&&!(p.ultEffect&&(p.ultEffect.type==='barrier'||p.ultEffect.type==='phase'))){
+    // Knight: damage reduction
+    let dmgReduce=CS().id==='knight'?.5:1;
+    for(let b of gs.eb){if(Math.abs(b.x-p.x)<14&&Math.abs(b.y-p.y)<14){if(CS().sp==='stealth'&&Math.random()<.3){b.y=9999;continue}b.y=9999;p.hp-=dmgReduce;p.inv=invBase;spP(p.x,p.y,'#f44',14);if(p.hp<=0){endGame();return}}}
+    for(let e of gs.enemies){if(!e.fixed&&Math.abs(e.x-p.x)<(e.w+20)/2&&Math.abs(e.y-p.y)<(e.h+20)/2){e.hp=0;p.hp-=dmgReduce;p.inv=invBase;spP(p.x,p.y,'#f44',14);if(p.hp<=0){endGame();return}}}
+  }
   for(let pt of gs.parts){pt.x+=pt.vx;pt.y+=pt.vy;pt.life--;pt.vx*=.92;pt.vy*=.92}
   gs.parts=gs.parts.filter(pt=>pt.life>0);
   if(!gs.bossWave&&gs.ws>=gs.wt&&gs.enemies.filter(e=>!e.fixed).length===0)setTimeout(startWave,400);
@@ -642,9 +802,12 @@ function enemyShoot(e,p){
   if(e.type==='turret_rapid'){for(let i=0;i<3;i++){let a=(i-1)*.15;aeb(e.x,e.y,(tx+Math.sin(a)*.3)*5,(ty+Math.cos(a)*.1)*5,4)}}
   else if(e.type==='turret_heavy'){aeb(e.x,e.y,tx*4,ty*4,11);aeb(e.x,e.y,tx*4+.5,ty*4,8);aeb(e.x,e.y,tx*4-.5,ty*4,8)}
   else if(e.type==='turret_spread'){for(let i=0;i<5;i++){let a=(i-2)*.3;aeb(e.x,e.y,(tx+Math.sin(a))*4,(ty+Math.cos(a)*.2)*4,5)}}
+  else if(e.type==='turret_laser'){e.laserActive=30;aeb(e.x,e.y,tx*7,ty*7,3);aeb(e.x,e.y,tx*7+.2,ty*7,3);aeb(e.x,e.y,tx*7-.2,ty*7,3)}
   else if(e.type==='sniper'){for(let a of[-0.08,0,0.08])aeb(e.x,e.y,(tx+Math.sin(a))*5,ty*5,5)}
   else if(e.type==='tank')aeb(e.x,e.y,tx*3.5,ty*3.5,8);
-  else if(e.type!=='fast'&&e.type!=='mini')aeb(e.x,e.y,tx*3,ty*3,5);
+  else if(e.type==='shield_enemy'){for(let a of[-0.2,0,0.2])aeb(e.x,e.y,(tx+Math.sin(a))*4,ty*4,6)}
+  else if(e.type==='enemy_bomber'){aeb(e.x,e.y,tx*3,ty*3,10);setTimeout(()=>{for(let i=0;i<6;i++){let a=i*Math.PI/3;if(gs)aeb(e.x,e.y,Math.cos(a)*3,Math.sin(a)*3,5)}},300)}
+  else if(e.type!=='fast'&&e.type!=='mini'&&e.type!=='healer')aeb(e.x,e.y,tx*3,ty*3,5);
   if(e.type==='mini')aeb(e.x,e.y,tx*3.5,ty*3.5,4);
 }
 
@@ -652,7 +815,6 @@ function spawnPickup(x,y){gs.pickups.push({x,y,vy:.5,type:Math.random()<.22?'par
 function triggerRapid(){gs.rapidBonus=Math.min(gs.rapidBonus+3,18);gs.rapidTimer=360;showNotif('⚡ RAPID FIRE！','#ff0');document.getElementById('h-rp').style.display='flex';document.getElementById('h-rpv').textContent=gs.rapidBonus}
 function checkPartUnlock(){let ls=SHIPS.filter((s,i)=>s.pc>0&&!sv.unlockedShips.includes(i));for(let s of ls){if(sv.parts>=s.pc){let i=SHIPS.indexOf(s);sv.unlockedShips.push(i);sv.parts-=s.pc;writeSv();showNotif('🚀 '+s.name+' 解放！','#0ff')}}}
 function updatePartsUI(){let el=document.getElementById('partsui'),need=5,cur=Math.min(sv.parts||0,need);el.innerHTML='<span style="color:#0ff;font-size:9px;margin-right:4px">⚙</span>';for(let i=0;i<need;i++){let d=document.createElement('div');d.className='pdot'+(i<cur?' on':'');el.appendChild(d)}el.innerHTML+='<span style="color:#445;font-size:9px;margin-left:3px">×5→新機体</span>'}
-
 function addF(x,y,txt,col){if(gs&&gs.floats)gs.floats.push({x,y,text:String(txt),life:48,color:col})}
 function spP(x,y,col,n){if(!gs||!gs.parts)return;for(let i=0;i<n;i++){let a=rnd(0,Math.PI*2),s=rnd(1,3);gs.parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:32+rnd(0,18),color:col,r:rnd(1,3.5)})}}
 
@@ -669,12 +831,26 @@ function updateHUD(){
   document.getElementById('h-cr').textContent=sv.credits;
   let me=document.getElementById('mslui');
   me.innerHTML=gMslLv()?`MSL×${gMslLv()} ${gs.p.mcd>0?'CD '+(gs.p.mcd/60).toFixed(1)+'s':'■READY'}`:'';
+  // ULT gauge
+  let uf=document.getElementById('ult-fill');
+  let pct=Math.min(100,p.ultGauge/ULT_MAX*100);
+  uf.style.width=pct+'%';
+  let ul=document.getElementById('ult-lbl'),sh=CS();
+  let cd=p.ultCD||0;
+  ul.textContent=p.ultGauge>=ULT_MAX?(cd>0?`▲ ${sh.ult.name} CD ${(cd/60).toFixed(1)}s`:`▲ ${sh.ult.name} [X] READY!`):`▲ ${sh.ult.name} ${Math.floor(pct)}%`;
+  ul.style.color=p.ultGauge>=ULT_MAX&&!cd?'#ff0':'#f0f';
+  ul.style.textShadow=p.ultGauge>=ULT_MAX&&!cd?'0 0 12px #ff0':'0 0 8px #f0f';
+  let ue=document.getElementById('ultui');
+  if(p.ultEffect){ue.textContent='⚡ '+CS().ult.name+' ACTIVE ('+p.ultEffect.timer+')'}else ue.textContent='';
 }
 
 // ── DRAW ──
 function draw(){
   ctx.clearRect(0,0,W,H);if(!gs)return;
   ctx.fillStyle=gs.bg+'aa';ctx.fillRect(0,0,W,H);
+  // ULT effects visual
+  if(gs.ultBeam){let b2=gs.ultBeam;let g=ctx.createLinearGradient(b2.x-(b2.wide?80:20),0,b2.x+(b2.wide?80:20),0);g.addColorStop(0,'transparent');g.addColorStop(.5,b2.col+'cc');g.addColorStop(1,'transparent');ctx.fillStyle=g;ctx.fillRect(b2.x-(b2.wide?80:20),0,b2.wide?160:40,H);ctx.shadowColor=b2.col;ctx.shadowBlur=20;ctx.strokeStyle=b2.col;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(b2.x,0);ctx.lineTo(b2.x,H);ctx.stroke();ctx.shadowBlur=0}
+  if(gs.ultBlackhole){let bh2=gs.ultBlackhole;ctx.save();ctx.shadowColor='#60f';ctx.shadowBlur=30;ctx.strokeStyle='#60f';ctx.lineWidth=2;ctx.beginPath();ctx.arc(bh2.x,bh2.y,bh2.r,0,Math.PI*2);ctx.stroke();ctx.fillStyle='rgba(60,0,120,.3)';ctx.beginPath();ctx.arc(bh2.x,bh2.y,bh2.r*.6,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.restore()}
   for(let s of gs.stars){let a=.15+.15*Math.sin(s.tw*.1);ctx.fillStyle=s.hue?`hsla(${s.hue},100%,70%,${a*1.5})`:`rgba(255,255,255,${a})`;ctx.beginPath();ctx.arc(s.x,s.y,s.s,0,Math.PI*2);ctx.fill()}
   for(let bx of gs.boxes){ctx.save();ctx.translate(bx.x,bx.y);ctx.shadowColor='#a86';ctx.shadowBlur=6;ctx.fillStyle='#6b4e2a';ctx.fillRect(-bx.w/2,-bx.h/2,bx.w,bx.h);ctx.shadowBlur=0;ctx.strokeStyle='#4a3018';ctx.lineWidth=2;ctx.strokeRect(-bx.w/2,-bx.h/2,bx.w,bx.h);ctx.strokeStyle='#7a5a30';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(-bx.w/2,-bx.h/2);ctx.lineTo(bx.w/2,bx.h/2);ctx.stroke();ctx.beginPath();ctx.moveTo(bx.w/2,-bx.h/2);ctx.lineTo(-bx.w/2,bx.h/2);ctx.stroke();ctx.restore()}
   for(let sol of gs.soldiers){
@@ -693,9 +869,10 @@ function draw(){
   let sc=CS().col;
   for(let b of gs.bullets){
     ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.atan2(b.vy,b.vx)+Math.PI/2);
-    ctx.shadowColor=sc;ctx.shadowBlur=6;
+    let bc=b.col||sc;
+    ctx.shadowColor=bc;ctx.shadowBlur=6;
     let g=ctx.createLinearGradient(0,-b.bh/2,0,b.bh/2);
-    g.addColorStop(0,'#fff');g.addColorStop(.35,sc);g.addColorStop(1,'rgba(0,0,0,0)');
+    g.addColorStop(0,'#fff');g.addColorStop(.35,bc);g.addColorStop(1,'rgba(0,0,0,0)');
     ctx.fillStyle=g;ctx.fillRect(-b.bw/2,-b.bh/2,b.bw,b.bh);
     if(b.bomber){ctx.strokeStyle='rgba(255,80,0,.3)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(0,0,42,0,Math.PI*2);ctx.stroke()}
     ctx.shadowBlur=0;ctx.restore();
@@ -704,9 +881,14 @@ function draw(){
   for(let e of gs.enemies)drawEnemy(e);
   if(gs.bossAlive&&gs.boss)gs.boss.fn(ctx,gs.boss,gs.tick);
   for(let pu of gs.pickups){let pulse=.6+.4*Math.sin(pu.tick*.12);ctx.save();ctx.translate(pu.x,pu.y);if(pu.type==='part'){ctx.shadowColor='#0ff';ctx.shadowBlur=9*pulse;ctx.fillStyle='#0ff';ctx.fillRect(-5,-5,10,10);ctx.fillStyle='#fff';ctx.fillRect(-2,-1,4,2);ctx.fillRect(-1,-2,2,4)}else{ctx.shadowColor='#ffd700';ctx.shadowBlur=7*pulse;ctx.fillStyle='#ffd700';ctx.beginPath();ctx.arc(0,0,6,0,Math.PI*2);ctx.fill();ctx.fillStyle='#000';ctx.font='bold 6px monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('$',0,0);ctx.textBaseline='alphabetic'}ctx.shadowBlur=0;ctx.restore()}
-  let sh=CS();if(!gs.p.inv||Math.floor(gs.p.inv/5)%2===0){
-    ctx.save();ctx.translate(gs.p.x,gs.p.y);ctx.shadowColor=sh.col;ctx.shadowBlur=14;sh.fn(ctx,0,0,sh.col,true);ctx.shadowBlur=0;
+  let sh=CS(),p=gs.p;
+  let isBlink=p.inv&&Math.floor(p.inv/5)%2===0;
+  let isBarrier=p.ultEffect&&(p.ultEffect.type==='barrier'||p.ultEffect.type==='phase');
+  if(!isBlink||isBarrier){
+    ctx.save();ctx.translate(p.x,p.y);
+    ctx.shadowColor=sh.col;ctx.shadowBlur=14;sh.fn(ctx,0,0,sh.col,true);ctx.shadowBlur=0;
     if(gs.rapidBonus>0){ctx.strokeStyle='rgba(255,220,0,.22)';ctx.lineWidth=2;ctx.shadowColor='#ff0';ctx.shadowBlur=9;ctx.beginPath();ctx.arc(0,0,22+Math.sin(gs.tick*.2)*3,0,Math.PI*2);ctx.stroke();ctx.shadowBlur=0}
+    if(isBarrier){ctx.strokeStyle=sh.col+'88';ctx.lineWidth=3;ctx.shadowColor=sh.col;ctx.shadowBlur=18+Math.sin(gs.tick*.1)*6;ctx.beginPath();ctx.arc(0,0,32,0,Math.PI*2);ctx.stroke();ctx.shadowBlur=0}
     ctx.restore();
   }
   for(let pt of gs.parts){ctx.globalAlpha=pt.life/50;ctx.shadowColor=pt.color;ctx.shadowBlur=4;ctx.fillStyle=pt.color;ctx.beginPath();ctx.arc(pt.x,pt.y,pt.r,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0}
@@ -720,44 +902,46 @@ function drawEnemy(e){
   let isFrozen=e.frozen>0;
   if(e.fixed){ctx.fillStyle='#333';ctx.shadowColor=e.col;ctx.shadowBlur=8;ctx.beginPath();ctx.arc(0,0,e.w*.55,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle='#555';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,e.w*.55,0,Math.PI*2);ctx.stroke()}
   if(e.glowing){let pulse=.5+.5*Math.sin((e.glowTick||0)*.12);ctx.shadowColor='#ff0';ctx.shadowBlur=12+pulse*10;ctx.strokeStyle=`rgba(255,220,0,${.3+pulse*.4})`;ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,0,e.w*.7+pulse*3,0,Math.PI*2);ctx.stroke()}
+  // Shield enemy: draw shield ring
+  if(e.type==='shield_enemy'&&(e.shield||0)>0){let sp=e.shield/e.maxShield;ctx.strokeStyle=`rgba(100,100,255,${.4+sp*.4})`;ctx.lineWidth=3+sp*2;ctx.shadowColor='#88f';ctx.shadowBlur=10;ctx.beginPath();ctx.arc(0,0,e.w*.7,0,Math.PI*2);ctx.stroke();ctx.shadowBlur=0}
+  // Healer: glow ring
+  if(e.type==='healer'){let pulse=.5+.5*Math.sin(gs.tick*.08);ctx.strokeStyle=`rgba(0,255,160,${.3+pulse*.3})`;ctx.lineWidth=2;ctx.shadowColor='#0fa';ctx.shadowBlur=8*pulse;ctx.beginPath();ctx.arc(0,0,e.w*.75,0,Math.PI*2);ctx.stroke();ctx.shadowBlur=0}
   ctx.fillStyle=isFrozen?'#aef':e.glowing?`hsl(${50+(e.glowTick||0)*3%60},100%,58%)`:e.col;
   ctx.shadowColor=e.fixed?e.col:'transparent';if(e.fixed)ctx.shadowBlur=10;
   if(e.type==='tank'||e.type==='turret_heavy'){ctx.fillRect(-e.w/2,-e.h/2,e.w,e.h);ctx.fillStyle=e.fixed?e.col+'88':'#fc0';ctx.fillRect(-e.w*.3,-e.h*.3,e.w*.6,e.h*.6)}
   else if(e.type==='fast'){ctx.beginPath();ctx.moveTo(0,-e.h/2);ctx.lineTo(-e.w/2,e.h/2);ctx.lineTo(e.w/2,e.h/2);ctx.closePath();ctx.fill()}
   else if(e.type==='sniper'||e.type==='turret_rapid'){ctx.beginPath();ctx.moveTo(0,-e.h/2);ctx.lineTo(-e.w*.4,e.h/2);ctx.lineTo(e.w*.4,e.h/2);ctx.closePath();ctx.fill();ctx.fillStyle='rgba(255,255,255,.2)';ctx.fillRect(-2,-e.h*.4,4,e.h*.8)}
+  else if(e.type==='turret_laser'){ctx.fillStyle=e.col;ctx.beginPath();ctx.arc(0,0,e.w/2,0,Math.PI*2);ctx.fill();if(e.laserActive>0){ctx.strokeStyle='rgba(0,255,255,.5)';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(0,-H);ctx.stroke();e.laserActive--}}
   else if(e.type==='mini'){ctx.beginPath();ctx.arc(0,0,e.w/2,0,Math.PI*2);ctx.fill()}
   else if(e.type==='turret_spread'){ctx.beginPath();ctx.arc(0,0,e.w/2,0,Math.PI*2);ctx.fill();ctx.strokeStyle=e.col+'88';ctx.lineWidth=2;for(let i=0;i<5;i++){let a=-0.4+i*.2;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(Math.sin(a)*e.w*.8,-Math.cos(a)*e.w*.8);ctx.stroke()}}
+  else if(e.type==='shield_enemy'){ctx.beginPath();ctx.moveTo(0,-e.h/2);ctx.lineTo(e.w/2,0);ctx.lineTo(0,e.h/2);ctx.lineTo(-e.w/2,0);ctx.closePath();ctx.fill()}
+  else if(e.type==='enemy_bomber'){ctx.beginPath();ctx.arc(0,0,e.w/2,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(255,80,0,.4)';ctx.beginPath();ctx.arc(0,0,e.w*.3,0,Math.PI*2);ctx.fill()}
+  else if(e.type==='healer'){ctx.beginPath();ctx.arc(0,0,e.w/2,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(255,255,255,.25)';ctx.fillRect(-2,-6,4,12);ctx.fillRect(-6,-2,12,4)}
   else{ctx.beginPath();ctx.moveTo(0,e.h/2);ctx.lineTo(-e.w/2,-e.h/3);ctx.lineTo(0,-e.h/2);ctx.lineTo(e.w/2,-e.h/3);ctx.closePath();ctx.fill()}
   ctx.shadowBlur=0;
   if(isFrozen){ctx.strokeStyle='rgba(160,220,255,.4)';ctx.lineWidth=1;for(let i=0;i<4;i++){let a=i*Math.PI/2+e.frozen*.05;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(Math.cos(a)*e.w*.6,Math.sin(a)*e.w*.6);ctx.stroke()}}
   let bw=e.w,hr=e.hp/e.maxHp;
   ctx.fillStyle='rgba(0,0,0,.5)';ctx.fillRect(-bw/2,-e.h/2-7,bw,4);
   ctx.fillStyle=hr>.6?'#0f4':hr>.3?'#fa0':'#f44';ctx.fillRect(-bw/2,-e.h/2-7,bw*hr,4);
+  // shield bar
+  if(e.type==='shield_enemy'&&e.maxShield>0){ctx.fillStyle='rgba(0,0,0,.4)';ctx.fillRect(-bw/2,-e.h/2-13,bw,4);ctx.fillStyle='#88f';ctx.fillRect(-bw/2,-e.h/2-13,bw*(e.shield/e.maxShield),4)}
   ctx.restore();
 }
 
 // ── SCREENS ──
-function hideAll(){document.querySelectorAll('.scr').forEach(s=>s.style.display='none')}
+function hideAll(){document.querySelectorAll('.scr').forEach(s=>s.style.display='none');document.getElementById('ultbar').style.display='none'}
 function showScr(id){
-  hideAll();
-  let el=document.getElementById(id);if(el)el.style.display='flex';
-  if(id==='s-title'){
-    document.getElementById('tit-cr').textContent='CR: '+sv.credits+' / パーツ: '+(sv.parts||0);
-    // パイロット名表示
-    if(currentUsername){
-      document.getElementById('tit-cr').textContent='[ '+currentUsername+' ]  CR: '+sv.credits+' / パーツ: '+(sv.parts||0);
-    }
-  }
+  hideAll();let el=document.getElementById(id);if(el)el.style.display='flex';
+  if(id==='s-title'){let pre=currentUsername?'[ '+currentUsername+' ]  ':'';document.getElementById('tit-cr').textContent=pre+'CR: '+sv.credits+' / パーツ: '+(sv.parts||0)}
 }
 function showBanner(txt,red){let el=document.getElementById('wbanner');el.textContent=txt;el.style.color=red?'#f0f':'#0ff';el.style.textShadow=`0 0 18px ${red?'#f0f':'#0ff'}`;el.style.opacity=1;setTimeout(()=>el.style.opacity=0,1900)}
-function showNotif(txt,col){let el=document.getElementById('notif');el.textContent=txt;el.style.color=col;el.style.textShadow=`0 0 10px ${col}`;el.style.opacity=1;clearTimeout(el._t);el._t=setTimeout(()=>el.style.opacity=0,2000)}
+function showNotif(txt,col){let el=document.getElementById('notif');el.textContent=txt;el.style.color=col;el.style.textShadow=`0 0 10px ${col}`;el.style.opacity=1;clearTimeout(el._t);el._t=setTimeout(()=>el.style.opacity=0,2200)}
 
 function openStage(){
   document.getElementById('ss-cr').textContent='CR: '+sv.credits;
   let grid=document.getElementById('sgrid');grid.innerHTML='';
   STAGES.forEach((stg,i)=>{
-    let unlocked=currentUsername===SECRET_CODE||i===0||sv.cleared.includes(i-1);
-    let cleared=sv.cleared.includes(i),sel=i===selStage;
+    let unlocked=currentUsername===SECRET_CODE||i===0||sv.cleared.includes(i-1),cleared=sv.cleared.includes(i),sel=i===selStage;
     let d=document.createElement('div');d.className='sc2'+(unlocked?'':' lk')+(sel?' sel':'');
     d.innerHTML=unlocked?`<div class="sn">${stg.sec}</div><div class="sm">${stg.name}</div><div class="sd">${stg.desc}</div><div class="ss">${cleared?'★':''}</div>`:`<div style="font-size:14px">🔒</div><div class="sn">${stg.sec}</div>`;
     if(unlocked)d.onclick=()=>{selStage=i;openStage()};
@@ -767,7 +951,6 @@ function openStage(){
   showScr('s-stage');
 }
 function launchStage(){hideAll();initGame(selStage)}
-
 function openHangar(){document.getElementById('hg-cr').textContent='CR: '+sv.credits;document.getElementById('hg-pt').textContent='パーツ: '+(sv.parts||0)+' 個（5個で新機体解放）';hTab('ship');showScr('s-hangar')}
 function hTab(id){
   document.getElementById('tab-sh').className='tab'+(id==='ship'?' on':'');
@@ -782,12 +965,15 @@ function renderShips(){
     let unlocked=sv.unlockedShips.includes(i);
     let card=document.createElement('div');card.className='shc'+(i===sv.shipIdx?' eq':'')+(unlocked?'':' lk');
     let cc=document.createElement('canvas');cc.width=80;cc.height=60;
-    let cx3=cc.getContext('2d');cx3.translate(40,34);s.fn(cx3,0,0,s.col,false);
+    let cx3=cc.getContext('2d');cx3.translate(40,34);
+    try{s.fn(cx3,0,0,s.col,false)}catch(e){}
     card.appendChild(cc);
     if(i===sv.shipIdx){let b=document.createElement('div');b.className='eqb';b.textContent='使用中';card.appendChild(b)}
     if(!unlocked){let b=document.createElement('div');b.className='lkb';b.textContent='⚙×'+s.pc;card.appendChild(b)}
     let h=document.createElement('h3');h.textContent=s.name;card.appendChild(h);
-    let p=document.createElement('p');p.innerHTML=s.desc.replace(/\n/g,'<br>');card.appendChild(p);
+    let p=document.createElement('p');p.textContent=s.desc;card.appendChild(p);
+    let ut=document.createElement('div');ut.className='ult-tag';ut.textContent='⚡ '+s.ult.name;card.appendChild(ut);
+    let ut2=document.createElement('p');ut2.textContent=s.ult.desc;ut2.style.cssText='color:#a0a;font-size:6.5px;margin-top:1px';card.appendChild(ut2);
     if(unlocked)card.onclick=()=>{sv.shipIdx=i;writeSv();renderShips()};
     sl.appendChild(card);
   });
@@ -798,11 +984,11 @@ function renderUpg(gid,cid){
   for(let def of UDEFS){
     let cl=lv(def.id),cost=Math.floor(def.bc*(1+cl*.4)),maxed=cl>=def.ml,req=def.req&&lv(def.req)<1;
     let cant=sv.credits<cost||maxed||req;
-    let d=document.createElement('div');d.className='si'+(maxed?' mx':cant?' cn':'');
+    let d=document.createElement('div');d.className='si'+(def.ult?' ult-upg':'')+(maxed?' mx':cant?' cn':'');
     let badge=maxed?'MAX':(def.ml===99?'':` Lv${cl}/${def.ml}`);
     let rn=req?`<br><span style="color:#f84;font-size:8px">要: ${def.req}</span>`:'';
     d.innerHTML=`<h3>${def.name}<span class="lv">${badge}</span></h3><p>${def.desc}${rn}</p><div class="cs">${maxed?'MAX':cost+' CR'}</div>`;
-    if(!maxed&&!req&&sv.credits>=cost)d.onclick=()=>{sv.credits-=cost;sv.upgrades[def.id]=(sv.upgrades[def.id]||0)+1;if(def.id==='shield')gs&&(gs.p.hp=gs.p.maxHp);if(def.id==='maxHp'){sv.upgrades.maxHp=(sv.upgrades.maxHp||0);if(gs){gs.p.maxHp++;gs.p.hp=Math.min(gs.p.hp+1,gs.p.maxHp)}}writeSv();renderUpg(gid,cid)};
+    if(!maxed&&!req&&sv.credits>=cost)d.onclick=()=>{sv.credits-=cost;sv.upgrades[def.id]=(sv.upgrades[def.id]||0)+1;if(def.id==='shield'&&gs)gs.p.hp=gs.p.maxHp;if(def.id==='maxHp'){if(gs){gs.p.maxHp++;gs.p.hp=Math.min(gs.p.hp+1,gs.p.maxHp)}}writeSv();renderUpg(gid,cid)};
     grid.appendChild(d);
   }
 }
@@ -820,19 +1006,9 @@ function showEnd(title,msg,col,actions){
 resize();
 function loop(){update();draw();requestAnimationFrame(loop)}
 loop();
-
-// 最初はユーザー名画面から
 showScr('s-username');
-// RESETボタン初期非表示（ユーザー名入力前は不要）
 document.getElementById('reset-btn').style.display='none';
-
-setInterval(()=>{
-  let el=document.getElementById('tit-cr');
-  if(el&&document.getElementById('s-title').style.display!=='none'){
-    let prefix=currentUsername?'[ '+currentUsername+' ]  ':'';
-    el.textContent=prefix+'CR: '+sv.credits+' / パーツ: '+(sv.parts||0);
-  }
-},600);
+setInterval(()=>{let el=document.getElementById('tit-cr');if(el&&document.getElementById('s-title').style.display!=='none'){let pre=currentUsername?'[ '+currentUsername+' ]  ':'';el.textContent=pre+'CR: '+sv.credits+' / パーツ: '+(sv.parts||0)}},600);
 </script>
 </body>
 </html>
